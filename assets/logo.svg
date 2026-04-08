@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Wind River Trading Company logo</title>
+  <desc id="logo-desc">A stylized tipi and mountain camp mark.</desc>
+  <g fill="#000">
+    <rect x="357" y="70" width="38" height="176" rx="3" transform="rotate(37 376 158)" />
+    <rect x="307" y="70" width="38" height="176" rx="3" transform="rotate(-37 326 158)" />
+    <path d="M353 215 555 560h-75L354 341 228 560h-75Z" />
+    <path d="M152 563h396l-27 48H179Z" />
+    <path d="M331 611 385 434l54 177Z" />
+    <path d="m120 503 34-35 22 42Z" />
+    <path d="m140 473 24-25 30 47Z" />
+    <path d="m534 510 55-42-13 42Z" />
+    <path d="m518 495 48-47-4 38Z" />
+  </g>
+</svg>

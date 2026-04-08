@@ -1,0 +1,19 @@
+{
+  "name": "Wind River Trading Company",
+  "short_name": "Wind River",
+  "icons": [
+    {
+      "src": "assets/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#efe4d4",
+  "background_color": "#efe4d4",
+  "display": "standalone"
+}
