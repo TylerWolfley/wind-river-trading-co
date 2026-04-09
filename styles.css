@@ -1231,13 +1231,26 @@ p + p {
   .nav-links {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     justify-content: stretch;
+    gap: 0.38rem;
   }
 
   .nav-links a {
-    padding: 0.5rem 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.55rem;
+    padding: 0.46rem 0.42rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
     text-align: center;
+    text-transform: none;
+  }
+
+  .nav-links a:last-child {
+    grid-column: 1 / -1;
   }
 
   .hero-copy h1,
@@ -1316,6 +1329,12 @@ p + p {
 
   .footer-branding {
     padding-left: 0.62rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.32rem 0.95rem;
   }
 
   .footer p,
