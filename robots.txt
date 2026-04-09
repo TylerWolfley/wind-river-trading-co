@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tylerwolfley.github.io/wind-river-trading-co/sitemap.xml
