@@ -8,6 +8,7 @@ if (header && navToggle) {
 
   if (navMenu) {
     const setMenuState = (isOpen) => {
+      navMenu.hidden = !isOpen;
       header.classList.toggle("is-nav-open", isOpen);
       navToggle.setAttribute("aria-expanded", String(isOpen));
       navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
@@ -17,6 +18,7 @@ if (header && navToggle) {
       if (mobileQuery.matches) {
         setMenuState(false);
       } else {
+        navMenu.hidden = false;
         header.classList.remove("is-nav-open");
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.setAttribute("aria-label", "Open menu");
