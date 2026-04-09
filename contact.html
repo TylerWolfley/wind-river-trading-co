@@ -40,11 +40,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>document.documentElement.classList.add('js');</script>
     <link
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
       />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,7 +101,22 @@
                 <span>Fort Washakie, Wyoming</span>
               </span>
             </a>
-            <div class="nav-links">
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-navigation"
+              aria-label="Open menu"
+              data-nav-toggle
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="nav-toggle-box" aria-hidden="true">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+              </span>
+            </button>
+            <div class="nav-links" id="primary-navigation">
               <a href="index.html">Home</a>
               <a href="about.html">About</a>
               <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
@@ -115,11 +132,11 @@
           <div class="wrap page-hero-grid reverse">
             <div class="page-hero-copy">
               <p class="eyebrow">Plan Your Stop</p>
-              <h1>Everything you need before you drive to Fort Washakie.</h1>
+              <h1>Directions, phone, and the easiest way to find the stop.</h1>
               <p class="lede">
                 Wind River Trading Company and the Gallery of the Wind &amp; Museum share the same
-                address on US 287 in Fort Washakie. Use this page for directions, the store phone,
-                the Facebook page, and a few nearby landmarks worth pairing with the stop.
+                address on US 287 in Fort Washakie. Use this page for the store phone, map links,
+                the Facebook page, and the quickest way to recognize the stop when you arrive.
               </p>
               <div class="button-row">
                 <a class="btn btn-primary" href="tel:+13073323267">Call the Store</a>
@@ -179,85 +196,43 @@
         </section>
 
         <section class="section">
-          <div class="wrap">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">What To Look For</p>
-                <h2>Two exterior views that make the stop easy to recognize.</h2>
-              </div>
+          <div class="wrap split-feature">
+            <figure class="framed-photo hero-image-frame">
+              <img
+                src="images/home-showroom-wide.jpg"
+                alt="Wide exterior view of Wind River Trading Company and front porch"
+                width="1800"
+                height="1012"
+                loading="lazy"
+              />
+              <figcaption>The front porch and sign are the clearest visual cues as you come through Fort Washakie on Highway 287.</figcaption>
+            </figure>
+
+            <div>
+              <p class="eyebrow">Finding The Stop</p>
+              <h2>The store is easy to spot once you know what to look for.</h2>
               <p>
-                If you have not been here before, these exterior views help you know you are in the
-                right place as you come through Fort Washakie on Highway 287.
+                The building sits right on US 287 on the south side of Fort Washakie. The long
+                timber front, porch, and main sign make it easier to recognize than a small setback store.
               </p>
-            </div>
-
-            <div class="photo-row-compact">
-              <figure class="framed-photo hero-image-frame">
-                <img
-                  src="images/home-showroom-wide.jpg"
-                  alt="Wide exterior view of Wind River Trading Company and front porch"
-                  width="1800"
-                  height="1012"
-                  loading="lazy"
-                />
-                <figcaption>The long front porch and main sign are the first cues that you have reached the trading company.</figcaption>
-              </figure>
-              <figure class="framed-photo wide-photo">
-                <img
-                  src="images/collections-showcase.jpg"
-                  alt="Tipi and mural exterior detail at Wind River Trading Company"
-                  width="1600"
-                  height="1000"
-                  loading="lazy"
-                />
-                <figcaption>The gallery-side mural and tipi detail give the building a second exterior landmark.</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="section section-alt">
-          <div class="wrap">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Before You Drive</p>
-                <h2>A few quick planning notes.</h2>
-              </div>
-              <p>
-                This is the page for the practical side of the stop. If your drive is time
-                sensitive, call the store or check Facebook before you head out.
-              </p>
-            </div>
-
-            <div class="card-grid three-up">
-              <article class="card">
-                <p class="card-label">Current daily details</p>
-                <h3>Call or check Facebook before a time-sensitive drive</h3>
-                <p>
-                  Hours and day-to-day changes are easiest to confirm directly with the store. The
-                  Facebook page is also useful if you want one more public touchpoint before you go.
-                </p>
-                <div class="utility-links">
-                  <a href="tel:+13073323267">Call (307) 332-3267</a>
-                  <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Open Facebook</a>
+              <div class="note-list">
+                <div class="note-item">
+                  <strong>Highway frontage</strong>
+                  <span>The stop is directly on US 287, so you do not need a separate detour once you reach Fort Washakie.</span>
                 </div>
-              </article>
-              <article class="card">
-                <p class="card-label">One stop</p>
-                <h3>The gallery and trading company share one address</h3>
-                <p>
-                  You do not need separate directions. The store and the Gallery of the Wind are on
-                  the same property at 14631 Hwy. 287.
-                </p>
-              </article>
-              <article class="card">
-                <p class="card-label">Highway location</p>
-                <h3>Easy to find on the south side of Fort Washakie</h3>
-                <p>
-                  The building sits right on US 287, which makes it a natural stop if you are moving
-                  through the Lander, Fort Washakie, and Dubois corridor.
-                </p>
-              </article>
+                <div class="note-item">
+                  <strong>Same property</strong>
+                  <span>Wind River Trading Company and the Gallery of the Wind &amp; Museum share one address and one store phone.</span>
+                </div>
+                <div class="note-item">
+                  <strong>Before you drive</strong>
+                  <span>If your drive is time-sensitive, call the store or check Facebook before heading out.</span>
+                </div>
+              </div>
+              <div class="utility-links">
+                <a href="tel:+13073323267">Call (307) 332-3267</a>
+                <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Open Facebook</a>
+              </div>
             </div>
           </div>
         </section>
@@ -266,40 +241,28 @@
           <div class="wrap">
             <div class="section-head">
               <div>
-                <p class="eyebrow">Nearby Fort Washakie stops</p>
-                <h2>Three places that add context if you have time for more than one stop.</h2>
+                <p class="eyebrow">If You Have More Time Nearby</p>
+                <h2>Three nearby stops that fit naturally with a visit to the trading company.</h2>
               </div>
               <p>
-                If you want a fuller day in Fort Washakie, these are three of the nearby places
-                that fit naturally with a trading company and gallery stop.
+                These are practical add-on stops if you want a little more context before heading
+                back out on the road.
               </p>
             </div>
 
-            <div class="card-grid three-up">
-              <article class="card">
-                <p class="card-label">Sacajawea&rsquo;s Gravesite</p>
-                <h3>A major historical site west of town</h3>
-                <p>
-                  Sacajawea&rsquo;s gravesite sits about three miles west of Fort Washakie at the
-                  foot of the Wind River Mountains and is one of the area&rsquo;s best-known stops.
-                </p>
-              </article>
-              <article class="card">
-                <p class="card-label">Eastern Shoshone Tribal Cultural Center</p>
-                <h3>Artifacts, artwork, photographs, and treaties</h3>
-                <p>
-                  The cultural center at 90 Ethete Road adds more Eastern Shoshone history through
-                  artifacts, artwork, photographs, and treaty material.
-                </p>
-              </article>
-              <article class="card">
-                <p class="card-label">Reservation trail</p>
-                <h3>A broader route through the landscape</h3>
-                <p>
-                  The larger reservation trail runs through important places and wide-open country,
-                  which helps put a stop in Fort Washakie into a wider landscape.
-                </p>
-              </article>
+            <div class="note-list">
+              <div class="note-item">
+                <strong>Sacajawea&rsquo;s Gravesite</strong>
+                <span>About three miles west of Fort Washakie, this is one of the area&rsquo;s best-known historical stops.</span>
+              </div>
+              <div class="note-item">
+                <strong>Eastern Shoshone Tribal Cultural Center</strong>
+                <span>The center at 90 Ethete Road adds artifacts, artwork, photographs, and treaty material to the day.</span>
+              </div>
+              <div class="note-item">
+                <strong>Reservation trail</strong>
+                <span>The broader trail route adds landscape and context if you want the trading company stop to be part of a longer drive.</span>
+              </div>
             </div>
           </div>
         </section>
@@ -308,22 +271,22 @@
       <footer class="footer">
         <div class="wrap footer-grid">
           <div class="footer-branding">
-            <div>
-              <p class="footer-brand">Wind River Trading Company</p>
-              <p>14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <p class="footer-brand">Wind River Trading Company</p>
+            <p class="footer-location">14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <a class="footer-phone" href="tel:+13073323267">(307) 332-3267</a>
+          </div>
+          <div class="footer-link-groups">
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
+              <a href="collections.html">Collections</a>
+              <a href="contact.html">Visit</a>
             </div>
-          </div>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
-          </div>
-          <div class="footer-links">
-            <a href="collections.html">Collections</a>
-            <a href="contact.html">Visit</a>
-            <a href="tel:+13073323267">(307) 332-3267</a>
-            <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
-            <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            <div class="footer-links">
+              <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
+              <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
           </div>
         </div>
       </footer>

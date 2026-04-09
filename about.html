@@ -40,11 +40,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>document.documentElement.classList.add('js');</script>
     <link
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
       />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,7 +101,22 @@
                 <span>Fort Washakie, Wyoming</span>
               </span>
             </a>
-            <div class="nav-links">
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-navigation"
+              aria-label="Open menu"
+              data-nav-toggle
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="nav-toggle-box" aria-hidden="true">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+              </span>
+            </button>
+            <div class="nav-links" id="primary-navigation">
               <a href="index.html">Home</a>
               <a aria-current="page" href="about.html">About</a>
               <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
@@ -280,22 +297,22 @@
       <footer class="footer">
         <div class="wrap footer-grid">
           <div class="footer-branding">
-            <div>
-              <p class="footer-brand">Wind River Trading Company</p>
-              <p>14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <p class="footer-brand">Wind River Trading Company</p>
+            <p class="footer-location">14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <a class="footer-phone" href="tel:+13073323267">(307) 332-3267</a>
+          </div>
+          <div class="footer-link-groups">
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
+              <a href="collections.html">Collections</a>
+              <a href="contact.html">Visit</a>
             </div>
-          </div>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
-          </div>
-          <div class="footer-links">
-            <a href="collections.html">Collections</a>
-            <a href="contact.html">Visit</a>
-            <a href="tel:+13073323267">(307) 332-3267</a>
-            <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
-            <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            <div class="footer-links">
+              <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
+              <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
           </div>
         </div>
       </footer>

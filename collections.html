@@ -40,11 +40,13 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>document.documentElement.classList.add('js');</script>
     <link
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
       />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,7 +101,22 @@
                 <span>Fort Washakie, Wyoming</span>
               </span>
             </a>
-            <div class="nav-links">
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="primary-navigation"
+              aria-label="Open menu"
+              data-nav-toggle
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="nav-toggle-box" aria-hidden="true">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+              </span>
+            </button>
+            <div class="nav-links" id="primary-navigation">
               <a href="index.html">Home</a>
               <a href="about.html">About</a>
               <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
@@ -115,18 +132,17 @@
           <div class="wrap page-hero-grid reverse">
             <div class="page-hero-copy">
               <p class="eyebrow">Collections</p>
-              <h1>Beads, fabric, jewelry, leatherwork, Pendleton, apparel, and more.</h1>
+              <h1>What the store carries.</h1>
               <p class="lede">
-                Inside the store, the mix runs from beads, fabric, ribbon, jewelry, leatherwork,
-                and pottery to Pendleton blankets, apparel, candles, soaps, huckleberry foods,
-                toys, puzzles, and museum artifact displays on site.
+                The floor mix runs from beads, fabric, ribbon, jewelry, and leatherwork to
+                Pendleton, apparel, pottery, huckleberry foods, candles, soaps, toys, puzzles,
+                and artifact displays on site.
               </p>
               <div class="pill-list">
-                <span class="pill">Beads</span>
-                <span class="pill">Fabric</span>
-                <span class="pill">Pendleton</span>
-                <span class="pill">Leatherwork</span>
-                <span class="pill">Huckleberry</span>
+                <span class="pill">Jewelry &amp; beadwork</span>
+                <span class="pill">Pendleton &amp; textiles</span>
+                <span class="pill">Leatherwork &amp; bags</span>
+                <span class="pill">Foods &amp; gifts</span>
               </div>
             </div>
 
@@ -147,58 +163,16 @@
           <div class="wrap">
             <div class="section-head">
               <div>
-                <p class="eyebrow">What Is Actually Here</p>
-                <h2>The floor is built around clear categories, not one generic gift mix.</h2>
+                <p class="eyebrow">Main Floor Categories</p>
+                <h2>The store reads best as a few strong categories, not one vague gift mix.</h2>
               </div>
               <p>
-                The store still feels like one trading company, but the easiest way to read it is by
-                the categories people actually come in for: beads, fabric and ribbon, jewelry,
-                Pendleton and apparel, leatherwork, pottery, candles, soaps, foods, toys, puzzles,
-                and the museum side of the stop.
+                The easiest way to read the floor is in four broad buckets: jewelry and beadwork,
+                Pendleton and textiles, leatherwork and bags, and the broader shelf mix.
               </p>
             </div>
 
             <div class="merch-grid">
-              <article class="merch-card">
-                <figure class="framed-photo category-closeup-frame">
-                  <img
-                    src="images/size-11-bead-sets.jpg"
-                    alt="Size 11 beading kits and loose bead sets at Wind River Trading Company"
-                    width="1280"
-                    height="720"
-                    loading="lazy"
-                  />
-                  <figcaption>Beading kits show that the store carries supplies as well as finished work.</figcaption>
-                </figure>
-                <div class="merch-card-copy">
-                  <p class="card-label">Beads / Beading Kits</p>
-                  <h3>The store carries more than finished beadwork</h3>
-                  <p>
-                    Loose beads and kits give the store a real beading-supplies side instead of
-                    limiting everything to finished gift pieces in the case.
-                  </p>
-                </div>
-              </article>
-              <article class="merch-card">
-                <figure class="framed-photo category-closeup-frame">
-                  <img
-                    src="images/patterned-fabric.jpg"
-                    alt="Patterned fabric on display at Wind River Trading Company"
-                    width="720"
-                    height="1280"
-                    loading="lazy"
-                  />
-                  <figcaption>Pattern fabric and ribbon keep the textile side visible beyond the blanket racks.</figcaption>
-                </figure>
-                <div class="merch-card-copy">
-                  <p class="card-label">Fabric / Ribbon / Textiles</p>
-                  <h3>Pattern fabric keeps the materials side easy to spot</h3>
-                  <p>
-                    Fabric and ribbon keep the textile side of the store from collapsing into one
-                    blanket wall. They help show the broader materials-and-pattern story on the floor.
-                  </p>
-                </div>
-              </article>
               <article class="merch-card">
                 <figure class="framed-photo category-closeup-frame">
                   <img
@@ -208,34 +182,34 @@
                     height="720"
                     loading="lazy"
                   />
-                  <figcaption>Jewelry remains one of the categories people most closely inspect.</figcaption>
+                  <figcaption>Jewelry cases and smaller beadworked pieces are some of the first things shoppers stop to inspect.</figcaption>
                 </figure>
                 <div class="merch-card-copy">
-                  <p class="card-label">Jewelry</p>
-                  <h3>Case pieces still anchor the close-up browse</h3>
+                  <p class="card-label">Jewelry / Beadwork</p>
+                  <h3>Case pieces and beadwork anchor the close-up browse</h3>
                   <p>
-                    Jewelry is still one of the categories people most strongly associate with the
-                    store, especially when they want handmade work in a smaller format.
+                    Jewelry, beadwork, and smaller handmade pieces give the store one of its
+                    strongest close-range categories without narrowing the stop to one counter.
                   </p>
                 </div>
               </article>
               <article class="merch-card">
                 <figure class="framed-photo category-closeup-frame">
                   <img
-                    src="images/pendleton-style-hoodie.jpg"
-                    alt="Pendleton-style hoodies and apparel at Wind River Trading Company"
+                    src="images/colored-fabrics.jpg"
+                    alt="Fabric bolts and textile shelves inside Wind River Trading Company"
                     width="720"
                     height="1280"
                     loading="lazy"
                   />
-                  <figcaption>Pendleton patterns and apparel give the floor one of its strongest visual signatures.</figcaption>
+                  <figcaption>Fabric, ribbon, blankets, and other textiles keep the store from reading like a single-brand apparel wall.</figcaption>
                 </figure>
                 <div class="merch-card-copy">
-                  <p class="card-label">Pendleton / Apparel</p>
-                  <h3>Blankets, outerwear, and pattern-driven apparel</h3>
+                  <p class="card-label">Pendleton / Textiles</p>
+                  <h3>Textiles run from fabric and ribbon to Pendleton and apparel</h3>
                   <p>
-                    Pendleton blankets and apparel give the store its strongest textile-and-Western
-                    identity without turning the whole room into one brand story.
+                    Pendleton blankets and apparel are part of the mix, but so are fabric and
+                    ribbon. Together they make the textile side feel broad instead of repetitive.
                   </p>
                 </div>
               </article>
@@ -243,19 +217,19 @@
                 <figure class="framed-photo category-closeup-frame">
                   <img
                     src="images/carry-on-bags.jpg"
-                    alt="Carry-on bags and leather-trimmed patterned bags at Wind River Trading Company"
+                    alt="Leather-trimmed bags and carry goods at Wind River Trading Company"
                     width="750"
                     height="862"
                     loading="lazy"
                   />
-                  <figcaption>Leatherwork and carry pieces keep the floor grounded in practical merchandise too.</figcaption>
+                  <figcaption>Leatherwork, bags, and smaller case pieces give the store a stronger trading-post feel.</figcaption>
                 </figure>
                 <div class="merch-card-copy">
                   <p class="card-label">Leatherwork / Bags</p>
-                  <h3>Bags and carry pieces broaden the trading-post feel</h3>
+                  <h3>Carry goods and leatherwork keep the floor practical as well as visual</h3>
                   <p>
-                    Leatherwork and bags make the floor feel broader than a case-and-art shop.
-                    They sit naturally between apparel, gifts, and the rest of the browse.
+                    Bags, leatherwork, and other carry pieces broaden the store beyond shelves and
+                    blanket racks. They are part of what gives the place its trading-post feel.
                   </p>
                 </div>
               </article>
@@ -271,8 +245,8 @@
                   <figcaption>Gift shelves run into huckleberry foods and smaller goods instead of one narrow category.</figcaption>
                 </figure>
                 <div class="merch-card-copy">
-                  <p class="card-label">Huckleberry / Candles / Toys</p>
-                  <h3>Foods and smaller shelf finds keep the store from feeling repetitive</h3>
+                  <p class="card-label">Mixed Merchandise / Shelf Browse</p>
+                  <h3>Foods, gifts, and shelf goods keep the browse broad</h3>
                   <p>
                     Huckleberry foods, candles, soaps, toys, puzzles, pottery, and smaller shelf
                     goods round out the broader mix, so the store never reads like only apparel or only jewelry.
@@ -284,39 +258,33 @@
         </section>
 
         <section class="section section-alt">
-          <div class="wrap">
-            <div class="section-head">
-              <div>
-                <p class="eyebrow">Artifacts On Site</p>
-                <h2>Museum artifacts are part of what gives the collections side extra depth.</h2>
-              </div>
-              <p>
-                The trading company does not stop at retail shelves. Museum artifact displays and
-                handmade work on site help slow the visit down and give the room more depth.
-              </p>
-            </div>
+          <div class="wrap split-feature">
+            <figure class="framed-photo category-closeup-frame">
+              <img
+                src="images/handmade-pipestone-pipes.jpg"
+                alt="Pipestone pipes on display in a case at Wind River Trading Company"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+              <figcaption>Displays and artifact material give the collections side more depth than a standard shop page.</figcaption>
+            </figure>
 
-            <div class="photo-row-compact">
-              <figure class="framed-photo category-closeup-frame">
-                <img
-                  src="images/handmade-pipestone-pipes.jpg"
-                  alt="Pipestone pipes on display in a case at Wind River Trading Company"
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                />
-                <figcaption>Case displays and artifacts change the collections page from a product list into a fuller stop.</figcaption>
-              </figure>
-              <figure class="framed-photo category-closeup-frame">
-                <img
-                  src="images/handmade-art.jpg"
-                  alt="Handmade art pieces displayed on wood boards at Wind River Trading Company"
-                  width="1280"
-                  height="720"
-                  loading="lazy"
-                />
-                <figcaption>Handmade art keeps the store tied to one-of-a-kind work as well as merchandise.</figcaption>
-              </figure>
+            <div>
+              <p class="eyebrow">Beyond The Shelves</p>
+              <h2>Pottery, rugs, drums, art, and artifact material are part of the broader stop.</h2>
+              <p>
+                The store side does not stop at shelf goods and apparel. Pottery, rugs, drums, art,
+                and artifact material are also part of what gives the property more depth.
+              </p>
+              <p>
+                That broader mix is one reason the collections page works best alongside the
+                Gallery of the Wind &amp; Museum. The same stop carries both the browseable store
+                floor and the museum side of the property.
+              </p>
+              <div class="utility-links">
+                <a href="gallery-of-the-wind.html">Open Gallery of the Wind</a>
+              </div>
             </div>
           </div>
         </section>
@@ -336,11 +304,11 @@
                 </div>
               </article>
               <article class="card">
-                <p class="card-label">If you want context too</p>
-                <h3>Pair the store browse with the museum page</h3>
+                <p class="card-label">If you want the full stop</p>
+                <h3>Pair the store floor with the museum page</h3>
                 <p>
-                  The collections make more sense when you also understand the Gallery of the Wind
-                  and the broader reservation context around Fort Washakie.
+                  The collections page makes the most sense when you read it alongside the Gallery
+                  of the Wind &amp; Museum. Both belong to the same stop on Highway 287.
                 </p>
                 <div class="utility-links">
                   <a href="gallery-of-the-wind.html">Open Gallery of the Wind</a>
@@ -354,22 +322,22 @@
       <footer class="footer">
         <div class="wrap footer-grid">
           <div class="footer-branding">
-            <div>
-              <p class="footer-brand">Wind River Trading Company</p>
-              <p>14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <p class="footer-brand">Wind River Trading Company</p>
+            <p class="footer-location">14631 Hwy. 287, Fort Washakie, WY 82514</p>
+            <a class="footer-phone" href="tel:+13073323267">(307) 332-3267</a>
+          </div>
+          <div class="footer-link-groups">
+            <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
+              <a href="collections.html">Collections</a>
+              <a href="contact.html">Visit</a>
             </div>
-          </div>
-          <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
-          </div>
-          <div class="footer-links">
-            <a href="collections.html">Collections</a>
-            <a href="contact.html">Visit</a>
-            <a href="tel:+13073323267">(307) 332-3267</a>
-            <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
-            <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            <div class="footer-links">
+              <a href="https://maps.google.com/?q=14631+Hwy+287+Fort+Washakie+WY+82514" target="_blank" rel="noreferrer">Google Maps</a>
+              <a href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/" target="_blank" rel="noreferrer">Facebook</a>
+            </div>
           </div>
         </div>
       </footer>
