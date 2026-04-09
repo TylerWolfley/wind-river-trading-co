@@ -1141,7 +1141,14 @@ main {
 }
 
 @media (max-width: 760px) {
+  .site-shell {
+    padding-top: calc(3rem + env(safe-area-inset-top));
+  }
+
   .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    padding-top: env(safe-area-inset-top);
     background: rgba(235, 218, 192, 0.98);
     box-shadow:
       0 1px 0 rgba(255, 246, 233, 0.68),
@@ -1204,6 +1211,10 @@ main {
 }
 
 @media (max-width: 640px) {
+  .site-shell {
+    padding-top: calc(2.82rem + env(safe-area-inset-top));
+  }
+
   .nav-bar {
     gap: 0.28rem;
     padding: 0.14rem 0 0.16rem;
