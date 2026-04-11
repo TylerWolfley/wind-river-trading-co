@@ -854,33 +854,42 @@ main {
   object-position: center;
 }
 
-.photo-strip,
-.photo-stack {
+.photo-stack,
+.media-pair,
+.home-category-layout {
   display: grid;
   gap: var(--space-gap);
 }
 
-.photo-strip {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.photo-stack {
+  gap: var(--space-gap);
+}
+
+.home-category-layout {
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
+  align-items: start;
   margin-top: 0.78rem;
 }
 
-.photo-strip + .utility-links.compact-links {
-  margin-top: 0.74rem;
+.home-category-layout .category-board {
+  margin-top: 0;
 }
 
-.photo-strip .framed-photo,
+.media-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.media-pair .framed-photo,
 .photo-stack .framed-photo {
   margin: 0;
 }
 
-.photo-strip img {
-  aspect-ratio: 4 / 3;
+.media-pair img {
   object-position: center;
 }
 
-.home-detail-strip img {
-  aspect-ratio: 1 / 1;
+.media-pair--portrait img {
+  aspect-ratio: 4 / 5;
 }
 
 .gallery-art-frame img {
@@ -1048,12 +1057,26 @@ main {
   padding: 0.62rem;
 }
 
+.merch-card--wide {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
 .merch-card .framed-photo {
   margin: 0;
 }
 
 .merch-card-copy {
   padding-right: 0.2rem;
+}
+
+.merch-card-aside {
+  margin-top: 0.7rem;
+}
+
+.merch-card-aside img {
+  aspect-ratio: 16 / 9;
+  object-position: center;
 }
 
 .merch-card-copy h3 {
@@ -1302,12 +1325,12 @@ main {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   }
 
-  .photo-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .home-category-layout {
+    grid-template-columns: 1fr;
   }
 
-  .photo-strip .framed-photo:first-child {
-    grid-column: 1 / -1;
+  .media-pair--portrait {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .footer-grid {
@@ -1747,8 +1770,8 @@ main {
     padding: 0.55rem 0;
   }
 
-  .photo-strip {
-    gap: 0.42rem;
+  .home-category-layout {
+    gap: 0.52rem;
     margin-top: 0.58rem;
   }
 
@@ -1756,7 +1779,7 @@ main {
     gap: 0.52rem;
   }
 
-  .home-detail-strip img {
+  .media-pair--portrait img {
     aspect-ratio: 4 / 3;
   }
 
