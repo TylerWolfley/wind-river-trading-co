@@ -572,6 +572,10 @@ main {
   margin-top: 1rem;
 }
 
+.quick-facts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .info-strip.four-up {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 0;
@@ -1317,7 +1321,8 @@ main {
   }
 
   .hero--immersive .quick-facts {
-    display: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.52rem;
   }
 
   .hero-copy .button-row,
