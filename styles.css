@@ -342,7 +342,7 @@ main {
 }
 
 .hero--immersive {
-  min-height: clamp(29rem, 68vh, 38rem);
+  min-height: clamp(31rem, 70vh, 40rem);
   display: flex;
   align-items: end;
   overflow: hidden;
@@ -356,8 +356,8 @@ main {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(18, 12, 8, 0.9) 0%, rgba(18, 12, 8, 0.6) 36%, rgba(18, 12, 8, 0.16) 72%),
-    linear-gradient(180deg, rgba(17, 11, 8, 0.22) 0%, rgba(17, 11, 8, 0.14) 34%, rgba(17, 11, 8, 0.88) 100%);
+    linear-gradient(90deg, rgba(18, 12, 8, 0.92) 0%, rgba(18, 12, 8, 0.62) 38%, rgba(18, 12, 8, 0.12) 76%),
+    linear-gradient(180deg, rgba(17, 11, 8, 0.16) 0%, rgba(17, 11, 8, 0.1) 36%, rgba(17, 11, 8, 0.9) 100%);
 }
 
 .hero--immersive::after {
@@ -430,7 +430,7 @@ main {
 .hero--immersive .hero-copy {
   overflow: visible;
   padding: 0;
-  max-width: 34rem;
+  max-width: 37rem;
   border: 0;
   background: none;
   box-shadow: none;
@@ -459,7 +459,7 @@ main {
 
 .hero-copy h1,
 .page-hero-copy h1 {
-  max-width: 12ch;
+  max-width: 13ch;
   margin-bottom: 0.62rem;
   font-size: clamp(2.5rem, 5.7vw, 4.6rem);
   letter-spacing: -0.02em;
@@ -537,6 +537,7 @@ main {
   color: #fff8f1;
   background: var(--copper-deep);
   border-color: rgba(94, 54, 48, 0.92);
+  box-shadow: 0 10px 18px rgba(58, 31, 20, 0.14);
 }
 
 .btn-secondary {
@@ -551,8 +552,8 @@ main {
 
 .btn-ghost {
   color: #fff8f1;
-  background: transparent;
-  border-color: rgba(255, 248, 241, 0.28);
+  background: rgba(255, 248, 241, 0.08);
+  border-color: rgba(255, 248, 241, 0.36);
 }
 
 .btn-ghost:hover {
@@ -577,17 +578,39 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.home-practical {
+  padding: 0.85rem 0 0;
+  background: linear-gradient(180deg, rgba(32, 21, 15, 0.08), rgba(32, 21, 15, 0));
+}
+
+.home-practical-inner,
+.practical-panel {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.visit-stat-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .info-strip.four-up {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-top: 0;
 }
 
 .fact-chip,
-.info-chip {
+.info-chip,
+.stat-card {
   padding: 0.66rem 0.74rem;
   border: 1px solid rgba(67, 47, 32, 0.1);
   border-radius: var(--radius-md);
-  background: rgba(247, 239, 226, 0.28);
+  background: rgba(247, 239, 226, 0.36);
   box-shadow: none;
 }
 
@@ -598,7 +621,8 @@ main {
 }
 
 .fact-chip span,
-.info-chip span {
+.info-chip span,
+.stat-card span {
   display: block;
   margin-bottom: 0.22rem;
   color: var(--muted);
@@ -609,7 +633,8 @@ main {
 }
 
 .fact-chip strong,
-.info-chip strong {
+.info-chip strong,
+.stat-card strong {
   display: block;
   font-size: 0.92rem;
   color: var(--ink);
@@ -620,13 +645,15 @@ main {
 }
 
 .fact-chip a,
-.info-chip a {
+.info-chip a,
+.stat-card a {
   color: inherit;
   text-decoration: none;
 }
 
 .fact-chip a:hover,
-.info-chip a:hover {
+.info-chip a:hover,
+.stat-card a:hover {
   text-decoration: underline;
 }
 
@@ -636,6 +663,24 @@ main {
 
 .info-chip a {
   color: var(--copper-deep);
+}
+
+.hours-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.82rem;
+  margin: 0;
+  padding: 0.58rem 0.72rem;
+  border-top: 1px solid rgba(67, 47, 32, 0.16);
+  border-bottom: 1px solid rgba(67, 47, 32, 0.16);
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.hours-line strong {
+  color: var(--ink);
 }
 
 .framed-photo {
@@ -1236,9 +1281,9 @@ main {
   }
 
   .hero--immersive {
-    min-height: 17rem;
+    min-height: 20rem;
     padding-top: 0.12rem;
-    padding-bottom: 0.56rem;
+    padding-bottom: 0.8rem;
   }
 
   .hero--immersive::before {
@@ -1252,7 +1297,7 @@ main {
   }
 
   .hero--immersive .hero-copy {
-    max-width: 15.75rem;
+    max-width: 18rem;
   }
 
   .hero--immersive .hero-copy h1 {
@@ -1269,7 +1314,7 @@ main {
   .hero--immersive .eyebrow {
     margin-bottom: 0.32rem;
     font-size: 0.62rem;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.03em;
   }
 
   .page-hero-copy .button-row {
@@ -1305,16 +1350,15 @@ main {
   }
 
   .hero--immersive .btn-ghost {
-    min-height: auto;
-    padding: 0;
-    border: 0;
-    background: none;
+    min-height: 2rem;
+    padding: 0 0.76rem;
+    border: 1px solid rgba(255, 248, 241, 0.36);
+    background: rgba(255, 248, 241, 0.08);
     color: rgba(255, 242, 230, 0.92);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    text-decoration: none;
   }
 
   .hero--immersive .btn-ghost:hover {
@@ -1324,6 +1368,16 @@ main {
   .hero--immersive .quick-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.52rem;
+  }
+
+  .stat-row,
+  .visit-stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hours-line {
+    display: grid;
+    gap: 0.18rem;
   }
 
   .hero-copy .button-row,
@@ -1469,7 +1523,9 @@ main {
 
 @media (max-width: 480px) {
   .quick-facts,
-  .info-strip.four-up {
+  .info-strip.four-up,
+  .stat-row,
+  .visit-stat-row {
     grid-template-columns: 1fr;
   }
 }
