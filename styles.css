@@ -815,13 +815,6 @@ main {
   object-fit: cover;
 }
 
-.framed-photo figcaption {
-  margin-top: 0.5rem;
-  color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.42;
-}
-
 .page-hero-photo img,
 .hero-image-frame img {
   aspect-ratio: 16 / 10;
@@ -1760,10 +1753,6 @@ main {
   .footer p,
   .footer a {
     font-size: 0.76rem;
-  }
-
-  .about-hero-grid .page-hero-photo figcaption {
-    display: none;
   }
 
   .page-about .page-hero-grid {
