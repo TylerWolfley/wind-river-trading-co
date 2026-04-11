@@ -859,6 +859,11 @@ main {
   object-position: center;
 }
 
+.interior-panorama-frame img {
+  aspect-ratio: 1036 / 466;
+  object-position: center;
+}
+
 .photo-stack,
 .media-pair,
 .home-category-layout {
