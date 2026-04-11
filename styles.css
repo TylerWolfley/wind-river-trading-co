@@ -854,6 +854,40 @@ main {
   object-position: center;
 }
 
+.photo-strip,
+.photo-stack {
+  display: grid;
+  gap: var(--space-gap);
+}
+
+.photo-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0.78rem;
+}
+
+.photo-strip + .utility-links.compact-links {
+  margin-top: 0.74rem;
+}
+
+.photo-strip .framed-photo,
+.photo-stack .framed-photo {
+  margin: 0;
+}
+
+.photo-strip img {
+  aspect-ratio: 4 / 3;
+  object-position: center;
+}
+
+.home-detail-strip img {
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-art-frame img {
+  aspect-ratio: 16 / 9;
+  object-position: center;
+}
+
 .section {
   padding: var(--space-section) 0;
 }
@@ -1266,6 +1300,14 @@ main {
 
   .merch-card {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-strip .framed-photo:first-child {
+    grid-column: 1 / -1;
   }
 
   .footer-grid {
@@ -1703,6 +1745,19 @@ main {
 
   .grouped-list > div {
     padding: 0.55rem 0;
+  }
+
+  .photo-strip {
+    gap: 0.42rem;
+    margin-top: 0.58rem;
+  }
+
+  .photo-stack {
+    gap: 0.52rem;
+  }
+
+  .home-detail-strip img {
+    aspect-ratio: 4 / 3;
   }
 
   .pill-list {
