@@ -889,15 +889,8 @@ main {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.history-photo-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-gap);
-}
-
 .media-pair .framed-photo,
-.photo-stack .framed-photo,
-.history-photo-pair .framed-photo {
+.photo-stack .framed-photo {
   margin: 0;
 }
 
@@ -905,11 +898,40 @@ main {
   object-position: center;
 }
 
-.history-photo-frame img {
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+.split-feature--history {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: start;
+}
+
+.history-photo-stack {
+  display: grid;
+  gap: clamp(0.6rem, 1.5vw, 0.9rem);
+  align-self: start;
+}
+
+.history-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 1px);
+  border: 1px solid rgba(67, 47, 32, 0.1);
+  background: rgba(244, 232, 213, 0.55);
+  box-shadow: 0 10px 24px rgba(28, 18, 10, 0.06);
+}
+
+.history-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
-  background: rgba(255, 246, 233, 0.9);
+}
+
+.history-photo--store img {
+  aspect-ratio: 1042 / 546;
+}
+
+.history-photo--gallery img {
+  aspect-ratio: 4 / 3;
 }
 
 .media-pair--portrait img {
@@ -1353,10 +1375,6 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .history-photo-pair {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .media-pair--portrait {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1490,8 +1508,8 @@ main {
     font-size: clamp(1.42rem, 6.4vw, 1.82rem);
   }
 
-  .history-photo-pair {
-    grid-template-columns: 1fr;
+  .split-feature--history {
+    gap: 0.72rem;
   }
 
   .hero--immersive {
