@@ -188,6 +188,7 @@ main {
   flex-wrap: nowrap;
   justify-content: flex-end;
   gap: 0.28rem;
+  margin-left: auto;
   min-width: 0;
 }
 
@@ -197,7 +198,7 @@ main {
   justify-content: center;
   width: 2.55rem;
   height: 2.55rem;
-  margin-left: auto;
+  margin-left: 0;
   flex: 0 0 auto;
   padding: 0;
   border: 1px solid rgba(67, 47, 32, 0.14);
@@ -223,6 +224,69 @@ main {
 .nav-toggle:focus-visible {
   outline: 2px solid rgba(85, 122, 118, 0.52);
   outline-offset: 2px;
+}
+
+.header-cart-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  margin-left: 0;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid rgba(67, 47, 32, 0.14);
+  border-radius: 10px;
+  background: rgba(248, 239, 226, 0.82);
+  color: var(--ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    0 6px 14px rgba(24, 16, 10, 0.08);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header-cart-button:hover {
+  background: rgba(250, 243, 232, 0.96);
+  border-color: rgba(67, 47, 32, 0.22);
+}
+
+.header-cart-button:focus-visible {
+  outline: 2px solid rgba(85, 122, 118, 0.52);
+  outline-offset: 2px;
+}
+
+.header-cart-icon {
+  width: 1.08rem;
+  height: 1.08rem;
+}
+
+.header-cart-badge {
+  position: absolute;
+  top: 0.12rem;
+  right: 0.12rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(26, 19, 14, 0.94);
+  color: #f8efe2;
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(20, 12, 8, 0.14);
+}
+
+.header-cart-badge[hidden] {
+  display: none;
 }
 
 .nav-toggle-box {
@@ -317,6 +381,22 @@ main {
   border-color: rgba(26, 19, 14, 0.92);
   color: #f8efe2;
   box-shadow: 0 8px 14px rgba(20, 12, 8, 0.1);
+}
+
+.shopify-buy__cart-toggle,
+.shopify-buy-frame--toggle,
+iframe.shopify-buy-frame.shopify-buy-frame--toggle {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.shopify-buy__cart-toggle__button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .hero,
@@ -446,6 +526,7 @@ main {
 
 .hero-copy h1,
 .page-hero-copy h1,
+.section-head h1,
 .section-head h2,
 .split-feature h2,
 .cta-band h2,
@@ -963,6 +1044,7 @@ main {
   margin-bottom: 0.82rem;
 }
 
+.section-head h1,
 .section-head h2 {
   max-width: 22ch;
   margin: 0;
@@ -974,6 +1056,18 @@ main {
   max-width: 34rem;
   line-height: 1.48;
   color: var(--muted);
+}
+
+.shop-embed-shell {
+  min-height: clamp(24rem, 65vh, 42rem);
+  padding: clamp(0.82rem, 1.55vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(244, 233, 217, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    var(--shadow-soft);
+  overflow-x: auto;
 }
 
 .card {
@@ -1437,7 +1531,7 @@ main {
 
   .brand {
     flex: 1 1 auto;
-    max-width: calc(100% - 2.7rem);
+    max-width: calc(100% - 5.55rem);
   }
 
   html.js .nav-toggle {
@@ -1682,7 +1776,7 @@ main {
   }
 
   .brand {
-    max-width: calc(100% - 2.28rem);
+    max-width: calc(100% - 4.4rem);
   }
 
   .brand-copy strong {
@@ -1699,6 +1793,25 @@ main {
     width: 1.92rem;
     height: 1.92rem;
     border-radius: 7px;
+  }
+
+  .header-cart-button {
+    width: 1.92rem;
+    height: 1.92rem;
+    border-radius: 7px;
+  }
+
+  .header-cart-icon {
+    width: 0.92rem;
+    height: 0.92rem;
+  }
+
+  .header-cart-badge {
+    top: 0.04rem;
+    right: 0.04rem;
+    min-width: 0.92rem;
+    height: 0.92rem;
+    font-size: 0.56rem;
   }
 
   .nav-toggle-box {

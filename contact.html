@@ -55,6 +55,7 @@
       />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="site.js"></script>
+    <script defer src="shopify-cart-global.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -151,7 +152,16 @@
               <a href="gallery-of-the-wind.html">Gallery of the Wind</a>
               <a href="collections.html">Collections</a>
               <a aria-current="page" href="contact.html">Visit</a>
+              <a href="shop.html">Shop</a>
             </div>
+            <button class="header-cart-button" type="button" data-cart-trigger aria-label="Open cart">
+              <span class="sr-only">Open cart</span>
+              <svg class="header-cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16l-1.5 11H5.5L4 7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M9 9V6.75a3 3 0 0 1 6 0V9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span class="header-cart-badge" data-cart-count hidden aria-hidden="true">0</span>
+            </button>
           </nav>
         </div>
       </header>
