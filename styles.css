@@ -565,6 +565,15 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   text-shadow: 0 10px 22px rgba(12, 7, 5, 0.36);
 }
 
+.hero--immersive .pill {
+  border-color: rgba(255, 248, 241, 0.24);
+  background: rgba(255, 248, 241, 0.08);
+}
+
+.gallery-immersive-hero .hero-backdrop {
+  object-position: center center;
+}
+
 .page-hero-copy h1 {
   max-width: 16ch;
   font-size: clamp(1.55rem, 2.45vw, 2.12rem);
@@ -940,6 +949,46 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   object-position: center;
 }
 
+.wagon-feature-frame img {
+  aspect-ratio: 16 / 10;
+  object-position: center 56%;
+}
+
+.home-feature-frame {
+  width: min(100%, 36rem);
+  margin-inline: auto;
+}
+
+.home-feature-frame img {
+  aspect-ratio: 4 / 3;
+  object-position: center 42%;
+}
+
+.home-category-layout.home-category-layout--images {
+  grid-template-columns: 1fr;
+  gap: clamp(0.82rem, 1.8vw, 1.18rem);
+}
+
+.media-pair.media-pair--home {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: start;
+}
+
+.media-pair--home .home-jewelry-photo img {
+  aspect-ratio: 4 / 3;
+  object-position: center 36%;
+}
+
+.media-pair--home .home-coyote-photo img {
+  aspect-ratio: auto;
+  object-position: center top;
+}
+
+.home-coyote-photo {
+  width: min(100%, 22rem);
+  justify-self: center;
+}
+
 .interior-panorama-frame img {
   aspect-ratio: 1036 / 466;
   object-position: center;
@@ -954,6 +1003,29 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .photo-stack {
   gap: var(--space-gap);
+}
+
+.photo-grid {
+  display: grid;
+  gap: var(--space-gap);
+  margin-top: 0.9rem;
+}
+
+.photo-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.photo-grid .framed-photo {
+  margin: 0;
+}
+
+.photo-grid img {
+  aspect-ratio: 4 / 3;
+  object-position: center;
+}
+
+.gallery-photo-grid img {
+  aspect-ratio: 5 / 4;
 }
 
 .home-category-layout {
@@ -1469,7 +1541,15 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     grid-template-columns: 1fr;
   }
 
+  .media-pair.media-pair--home {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .media-pair--portrait {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .photo-grid--three {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1585,6 +1665,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
   .wrap {
     width: min(calc(100% - 1.1rem), var(--max-width));
+  }
+
+  .photo-grid--three {
+    grid-template-columns: 1fr;
   }
 
   .nav-bar {
@@ -1936,6 +2020,14 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   .home-category-layout {
     gap: 0.52rem;
     margin-top: 0.58rem;
+  }
+
+  .media-pair.media-pair--home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-coyote-photo {
+    width: min(100%, 20rem);
   }
 
   .photo-stack {
