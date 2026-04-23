@@ -53,7 +53,7 @@
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&family=Source+Sans+3:wght@400;700;800&display=swap"
         rel="stylesheet"
       />
-    <link rel="stylesheet" href="./styles.css?v=20260422" />
+    <link rel="stylesheet" href="./styles.css?v=20260423-visit-hero" />
     <script defer src="./site.js?v=20260422"></script>
     <script defer src="./shopify-cart-global.js?v=20260422"></script>
     <script type="application/ld+json">
@@ -167,11 +167,20 @@
       </header>
 
       <main>
-        <section class="page-hero">
-          <div class="wrap page-hero-grid reverse">
-            <div class="page-hero-copy">
+        <section class="hero hero--immersive visit-immersive-hero">
+          <img
+            class="hero-backdrop"
+            src="images2/courtyard-exterior.jpg"
+            alt="Courtyard and wagon outside Wind River Trading Company in Fort Washakie"
+            width="1241"
+            height="828"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="wrap hero-grid">
+            <div class="hero-copy">
               <p class="eyebrow">Visit</p>
-              <h1>Hours, phone, and directions.</h1>
+              <h1><span class="hero-title-line">Hours, phone,</span><span class="hero-title-line">and directions.</span></h1>
               <p class="lede">
                 Wind River Trading Company is on Highway 287 in Fort Washakie.
               </p>
@@ -184,9 +193,9 @@
                 >
                   Get directions
                 </a>
-                <a class="btn btn-secondary" href="tel:+13073323267">Call the store</a>
+                <a class="btn btn-ghost" href="tel:+13073323267">Call the store</a>
                 <a
-                  class="btn btn-secondary"
+                  class="btn btn-ghost"
                   href="https://www.facebook.com/Wind-River-Trading-Company-1144894348871478/"
                   target="_blank"
                   rel="noreferrer"
@@ -195,17 +204,6 @@
                 </a>
               </div>
             </div>
-
-            <figure class="framed-photo page-hero-photo hero-image-frame">
-              <img
-                src="images2/courtyard-exterior.jpg"
-                alt="Courtyard and wagon outside Wind River Trading Company in Fort Washakie"
-                width="1241"
-                height="828"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </figure>
           </div>
         </section>
 

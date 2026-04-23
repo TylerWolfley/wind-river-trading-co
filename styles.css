@@ -516,6 +516,17 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   box-shadow: none;
 }
 
+.hero--immersive .hero-copy h1 {
+  display: grid;
+  align-content: start;
+  gap: 0.02em;
+  max-width: 12ch;
+}
+
+.hero--immersive .hero-copy .lede {
+  max-width: 33rem;
+}
+
 .page-hero-copy {
   --surface-fill: rgba(244, 233, 217, 0.82);
   --surface-radius: var(--radius-lg);
@@ -570,8 +581,29 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   background: rgba(255, 248, 241, 0.08);
 }
 
+.gallery-immersive-hero {
+  min-height: clamp(31rem, 70vh, 40rem);
+  align-items: end;
+}
+
 .gallery-immersive-hero .hero-backdrop {
-  object-position: center center;
+  object-position: center 68%;
+}
+
+.visit-immersive-hero .hero-backdrop {
+  object-position: center 56%;
+}
+
+.collections-immersive-hero .hero-backdrop {
+  object-position: center 44%;
+}
+
+.about-immersive-hero {
+  min-height: clamp(31rem, 70vh, 40rem);
+}
+
+.about-immersive-hero .hero-backdrop {
+  object-position: 50% 100%;
 }
 
 .page-hero-copy h1 {
@@ -725,6 +757,376 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .hours-line strong {
   color: var(--ink);
+}
+
+.home-overview-layout,
+.home-gallery-layout {
+  display: grid;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+.home-overview-layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+}
+
+.home-overview-visuals,
+.home-gallery-visuals,
+.home-overview-content,
+.home-gallery-copy,
+.home-cta-copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-gap-lg);
+}
+
+.home-section-head {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.home-section-head p {
+  max-width: 36rem;
+}
+
+.home-overview-photo,
+.home-gallery-photo,
+.home-cta-photo {
+  margin: 0;
+}
+
+.home-overview-photo--main img {
+  aspect-ratio: 4 / 3.1;
+  object-position: center 48%;
+}
+
+.home-overview-support {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-gap);
+}
+
+.home-overview-support .home-overview-photo img {
+  aspect-ratio: 5 / 4;
+}
+
+.home-overview-support .home-overview-photo:first-child img {
+  object-position: center 44%;
+}
+
+.home-overview-support .home-overview-photo:last-child img {
+  object-position: center 50%;
+}
+
+.home-overview-grid {
+  gap: var(--space-gap);
+}
+
+.home-overview-card {
+  min-height: 100%;
+  padding-top: calc(var(--space-card-lg) + 0.18rem);
+  background: rgba(247, 239, 226, 0.42);
+}
+
+.home-overview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: var(--accent-stripe);
+  opacity: 0.58;
+}
+
+.home-gallery-layout {
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: start;
+}
+
+.home-gallery-notes {
+  margin-top: 0;
+}
+
+.home-gallery-visuals {
+  gap: var(--space-gap);
+}
+
+.home-gallery-photo--main img {
+  aspect-ratio: 16 / 10;
+  object-position: center 54%;
+}
+
+.home-gallery-support {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: var(--space-gap);
+}
+
+.home-gallery-support .home-gallery-photo img {
+  aspect-ratio: 5 / 4;
+  object-position: center;
+}
+
+.home-gallery-photo--portrait img {
+  aspect-ratio: 4 / 5;
+  object-position: center 32%;
+}
+
+.home-gallery-copy .utility-links {
+  margin-top: 0.1rem;
+}
+
+.home-cta-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.home-cta-photo {
+  align-self: stretch;
+}
+
+.home-cta-photo img {
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-position: center 52%;
+}
+
+.home-cta-copy {
+  align-content: center;
+  gap: 0.9rem;
+}
+
+.home-cta-copy .button-row {
+  margin-top: 0;
+}
+
+.about-history-overview,
+.about-story-grid,
+.about-present-grid {
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+.about-history-section,
+.about-story-section,
+.about-present-section {
+  align-items: start;
+}
+
+.about-history-section {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.about-story-section {
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+}
+
+.about-present-section {
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+}
+
+.about-history-overview {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: start;
+}
+
+.about-history-copy,
+.about-story-copy,
+.about-story-visuals,
+.about-present-copy,
+.about-present-visuals {
+  display: grid;
+  align-content: start;
+  gap: var(--space-gap-lg);
+}
+
+.about-history-copy h2,
+.about-story-copy h2,
+.about-present-copy h2,
+.about-links-intro h2 {
+  font-family: var(--font-display);
+  line-height: 1.06;
+  color: var(--ink);
+}
+
+.about-history-copy h2,
+.about-story-copy h2,
+.about-present-copy h2 {
+  font-size: clamp(1.38rem, 2.35vw, 1.95rem);
+}
+
+.about-history-copy p,
+.about-story-copy p,
+.about-present-copy p,
+.about-links-intro p,
+.about-history-milestone p,
+.about-link-card span {
+  color: var(--muted);
+}
+
+.about-section-head {
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.about-section-head p {
+  max-width: 38rem;
+}
+
+.about-story-copy .note-list,
+.about-present-copy .note-list {
+  margin-top: 0;
+}
+
+.about-history-milestones {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(67, 47, 32, 0.12);
+}
+
+.about-history-milestone {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr);
+  gap: 0.72rem;
+  padding: 0.82rem 0;
+  border-bottom: 1px solid rgba(67, 47, 32, 0.12);
+}
+
+.about-history-milestone > span {
+  color: var(--copper-deep);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.about-history-milestone strong,
+.about-link-card strong {
+  display: block;
+  color: var(--ink);
+}
+
+.about-story-grid {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  align-items: start;
+}
+
+.about-story-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-gap);
+}
+
+.about-story-point {
+  min-height: 100%;
+}
+
+.about-story-point .card-label {
+  margin-bottom: 0.32rem;
+}
+
+.about-story-point p:last-child {
+  margin-top: 0;
+}
+
+.about-story-photo,
+.about-present-photo {
+  margin: 0;
+}
+
+.about-story-photo--main img {
+  aspect-ratio: 16 / 10;
+  object-position: center 58%;
+}
+
+.about-story-support {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: var(--space-gap);
+}
+
+.about-story-photo--article img {
+  aspect-ratio: 4 / 5;
+  object-position: center 26%;
+}
+
+.about-story-photo--detail img {
+  aspect-ratio: 5 / 4;
+  object-position: center 42%;
+}
+
+.about-present-grid {
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: start;
+}
+
+.about-present-notes {
+  margin-top: 0;
+}
+
+.about-present-photo--main img {
+  aspect-ratio: 16 / 10;
+  object-position: center 46%;
+}
+
+.about-present-photo--support img {
+  aspect-ratio: 16 / 10;
+  object-position: center 42%;
+}
+
+.about-links-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(0.9rem, 2vw, 1.2rem);
+  padding: var(--space-card-lg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(244, 233, 217, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    var(--shadow-soft);
+}
+
+.about-links-intro {
+  display: grid;
+  align-content: start;
+  gap: 0.48rem;
+}
+
+.about-links-intro h2 {
+  font-size: clamp(1.55rem, 2.7vw, 2rem);
+}
+
+.about-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-gap);
+}
+
+.about-link-card {
+  display: grid;
+  align-content: start;
+  gap: 0.34rem;
+  min-height: 100%;
+  padding: var(--space-card);
+  border: 1px solid rgba(67, 47, 32, 0.12);
+  border-radius: var(--radius-lg);
+  background: rgba(247, 239, 226, 0.42);
+  text-decoration: none;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(163, 86, 61, 0.24);
+  background: rgba(248, 241, 230, 0.62);
 }
 
 .category-board,
@@ -1533,6 +1935,25 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     grid-template-columns: 1fr;
   }
 
+  .home-overview-layout,
+  .home-gallery-layout,
+  .home-cta-band,
+  .about-history-overview,
+  .about-story-grid,
+  .about-present-grid,
+  .about-links-band {
+    grid-template-columns: 1fr;
+  }
+
+  .home-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-story-points,
+  .about-links-grid {
+    grid-template-columns: 1fr;
+  }
+
   .merch-card {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   }
@@ -1565,6 +1986,26 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
   .hero--immersive {
     min-height: clamp(25rem, 58vh, 31rem);
+  }
+
+  .gallery-immersive-hero {
+    min-height: clamp(25rem, 58vh, 31rem);
+  }
+
+  .visit-immersive-hero .hero-backdrop {
+    object-position: center 54%;
+  }
+
+  .collections-immersive-hero .hero-backdrop {
+    object-position: center 42%;
+  }
+
+  .about-immersive-hero {
+    min-height: clamp(25rem, 58vh, 31rem);
+  }
+
+  .about-immersive-hero .hero-backdrop {
+    object-position: 50% 100%;
   }
 
   .hero--immersive .hero-grid {
@@ -1671,6 +2112,13 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     grid-template-columns: 1fr;
   }
 
+  .home-overview-support,
+  .home-gallery-support,
+  .home-overview-grid,
+  .about-story-support {
+    grid-template-columns: 1fr;
+  }
+
   .nav-bar {
     gap: 0.24rem;
     padding: 0.1rem 0 0.12rem;
@@ -1696,6 +2144,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding-bottom: 0.58rem;
   }
 
+  .gallery-immersive-hero {
+    min-height: clamp(15.5rem, 44svh, 18rem);
+  }
+
   .hero--immersive::before {
     background:
       linear-gradient(180deg, rgba(18, 12, 8, 0.08) 0%, rgba(18, 12, 8, 0.34) 24%, rgba(18, 12, 8, 0.9) 100%),
@@ -1706,11 +2158,32 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     object-position: center 58%;
   }
 
+  .gallery-immersive-hero .hero-backdrop {
+    object-position: center 58%;
+  }
+
+  .visit-immersive-hero .hero-backdrop {
+    object-position: center 52%;
+  }
+
+  .collections-immersive-hero .hero-backdrop {
+    object-position: center 38%;
+  }
+
+  .about-immersive-hero {
+    min-height: clamp(15.5rem, 44svh, 18rem);
+  }
+
+  .about-immersive-hero .hero-backdrop {
+    object-position: 50% 100%;
+  }
+
   .hero--immersive .hero-copy {
     max-width: 16.8rem;
   }
 
   .hero--immersive .hero-copy h1 {
+    gap: 0.01em;
     margin-bottom: 0.3rem;
     font-size: clamp(1.54rem, 7.2vw, 1.94rem);
     line-height: 0.98;
@@ -2050,6 +2523,33 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
   .compact-links {
     gap: 0.28rem 0.68rem;
+  }
+
+  .home-overview-content,
+  .home-gallery-copy,
+  .home-cta-copy,
+  .about-history-copy,
+  .about-story-copy,
+  .about-story-visuals,
+  .about-present-copy,
+  .about-present-visuals,
+  .about-links-intro {
+    gap: 0.62rem;
+  }
+
+  .home-overview-photo--main img,
+  .home-gallery-photo--main img,
+  .home-cta-photo img,
+  .about-story-photo--main img,
+  .about-present-photo--main img,
+  .about-present-photo--support img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-history-milestone {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
+    padding: 0.66rem 0;
   }
 
   .compact-links a {
