@@ -516,17 +516,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   box-shadow: none;
 }
 
-.hero--immersive .hero-copy h1 {
-  display: grid;
-  align-content: start;
-  gap: 0.02em;
-  max-width: 12ch;
-}
-
-.hero--immersive .hero-copy .lede {
-  max-width: 33rem;
-}
-
 .page-hero-copy {
   --surface-fill: rgba(244, 233, 217, 0.82);
   --surface-radius: var(--radius-lg);
@@ -595,7 +584,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .collections-immersive-hero .hero-backdrop {
-  object-position: center 44%;
+  object-fit: cover;
+  object-position: 55% 14%;
 }
 
 .about-immersive-hero {
@@ -1997,7 +1987,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .collections-immersive-hero .hero-backdrop {
-    object-position: center 42%;
+    object-position: 54% 12%;
   }
 
   .about-immersive-hero {
@@ -2167,7 +2157,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .collections-immersive-hero .hero-backdrop {
-    object-position: center 38%;
+    object-position: 52% 10%;
   }
 
   .about-immersive-hero {
@@ -2183,7 +2173,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .hero--immersive .hero-copy h1 {
-    gap: 0.01em;
     margin-bottom: 0.3rem;
     font-size: clamp(1.54rem, 7.2vw, 1.94rem);
     line-height: 0.98;
