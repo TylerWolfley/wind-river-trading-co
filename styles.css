@@ -516,17 +516,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   box-shadow: none;
 }
 
-.hero--immersive .hero-copy h1 {
-  display: grid;
-  align-content: start;
-  gap: 0.02em;
-  max-width: 12ch;
-}
-
-.hero--immersive .hero-copy .lede {
-  max-width: 33rem;
-}
-
 .page-hero-copy {
   --surface-fill: rgba(244, 233, 217, 0.82);
   --surface-radius: var(--radius-lg);
@@ -595,7 +584,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .collections-immersive-hero .hero-backdrop {
-  object-position: center 44%;
+  object-fit: cover;
+  object-position: 55% 14%;
 }
 
 .about-immersive-hero {
@@ -698,27 +688,45 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .home-practical-inner {
-  display: grid;
-  gap: 0.55rem;
+  display: block;
 }
 
-.stat-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.55rem;
-}
-
-.stat-card {
-  padding: 0.66rem 0.74rem;
+.store-info-panel {
+  padding: 0.72rem 0.82rem;
   border: 1px solid rgba(67, 47, 32, 0.1);
   border-radius: var(--radius-md);
   background: rgba(247, 239, 226, 0.36);
   box-shadow: none;
 }
 
-.stat-card span {
+.store-info-title {
+  margin: 0 0 0.62rem;
+  color: var(--copper-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.store-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.98fr) minmax(0, 0.74fr);
+  gap: 0.82rem;
+}
+
+.store-info-item {
+  display: grid;
+  align-content: start;
+  gap: 0.22rem;
+}
+
+.store-info-item + .store-info-item {
+  padding-left: 0.82rem;
+  border-left: 1px solid rgba(67, 47, 32, 0.12);
+}
+
+.store-info-item span {
   display: block;
-  margin-bottom: 0.22rem;
   color: var(--muted);
   font-size: 0.74rem;
   font-weight: 800;
@@ -726,37 +734,20 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   text-transform: none;
 }
 
-.stat-card strong {
+.store-info-item strong {
   display: block;
   font-size: 0.92rem;
+  line-height: 1.35;
   color: var(--ink);
 }
 
-.stat-card a {
+.store-info-item a {
   color: inherit;
   text-decoration: none;
 }
 
-.stat-card a:hover {
+.store-info-item a:hover {
   text-decoration: underline;
-}
-
-.hours-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.82rem;
-  margin: 0;
-  padding: 0.58rem 0.72rem;
-  border-top: 1px solid rgba(67, 47, 32, 0.16);
-  border-bottom: 1px solid rgba(67, 47, 32, 0.16);
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.35;
-}
-
-.hours-line strong {
-  color: var(--ink);
 }
 
 .home-overview-layout,
@@ -806,18 +797,22 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-gap);
+  align-items: start;
+}
+
+.home-overview-support .home-overview-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(17rem, 28vw, 22rem);
 }
 
 .home-overview-support .home-overview-photo img {
-  aspect-ratio: 5 / 4;
-}
-
-.home-overview-support .home-overview-photo:first-child img {
-  object-position: center 44%;
-}
-
-.home-overview-support .home-overview-photo:last-child img {
-  object-position: center 50%;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .home-overview-grid {
@@ -1997,7 +1992,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .collections-immersive-hero .hero-backdrop {
-    object-position: center 42%;
+    object-position: 54% 12%;
   }
 
   .about-immersive-hero {
@@ -2119,6 +2114,14 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     grid-template-columns: 1fr;
   }
 
+  .home-overview-support .home-overview-photo {
+    height: auto;
+  }
+
+  .home-overview-support .home-overview-photo img {
+    height: auto;
+  }
+
   .nav-bar {
     gap: 0.24rem;
     padding: 0.1rem 0 0.12rem;
@@ -2167,7 +2170,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .collections-immersive-hero .hero-backdrop {
-    object-position: center 38%;
+    object-position: 52% 10%;
   }
 
   .about-immersive-hero {
@@ -2183,7 +2186,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .hero--immersive .hero-copy h1 {
-    gap: 0.01em;
     margin-bottom: 0.3rem;
     font-size: clamp(1.54rem, 7.2vw, 1.94rem);
     line-height: 0.98;
@@ -2273,17 +2275,24 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .home-practical-inner {
-    gap: 0.36rem;
+    gap: 0;
   }
 
-  .home-practical .stat-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.36rem;
+  .store-info-panel {
+    padding: 0.62rem;
   }
 
-  .home-practical .stat-card:nth-child(2) {
-    grid-column: 1 / -1;
-    order: 3;
+  .store-info-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .store-info-item + .store-info-item {
+    margin-top: 0.62rem;
+    padding-top: 0.62rem;
+    padding-left: 0;
+    border-top: 1px solid rgba(67, 47, 32, 0.12);
+    border-left: 0;
   }
 
   .category-list {
@@ -2313,13 +2322,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   .hours-stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.4rem;
-  }
-
-  .hours-line {
-    display: flex;
-    gap: 0.12rem 0.62rem;
-    padding: 0.42rem 0;
-    font-size: 0.78rem;
   }
 
   .hero-copy .button-row,
@@ -2418,16 +2420,20 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     font-size: 0.7rem;
   }
 
-  .stat-card {
-    padding: 0.46rem 0.52rem;
+  .store-info-panel {
+    padding: 0.52rem 0.58rem;
   }
 
-  .stat-card span {
-    margin-bottom: 0.08rem;
+  .store-info-title {
+    margin-bottom: 0.42rem;
+    font-size: 0.68rem;
+  }
+
+  .store-info-item span {
     font-size: 0.64rem;
   }
 
-  .stat-card strong {
+  .store-info-item strong {
     font-size: 0.8rem;
     line-height: 1.18;
   }
@@ -2606,8 +2612,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 @media (max-width: 480px) {
-  .home-practical .stat-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .store-info-panel {
+    padding-inline: 0.52rem;
   }
 }
 
