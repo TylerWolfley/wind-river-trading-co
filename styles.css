@@ -1773,6 +1773,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   align-self: center;
 }
 
+.gallery-mobile-lead-photo {
+  display: none;
+}
+
 .gallery-highlight-card {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -3109,6 +3113,16 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   .gallery-highlight-card {
     gap: 0.52rem;
     padding: 0.64rem;
+  }
+
+  .page-gallery .gallery-mobile-lead-photo {
+    display: block;
+    margin: 0 0 0.72rem;
+  }
+
+  .page-gallery .gallery-mobile-lead-photo img {
+    aspect-ratio: 4 / 3;
+    object-position: left center;
   }
 
   .captioned-photo figcaption {
