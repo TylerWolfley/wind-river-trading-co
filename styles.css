@@ -383,6 +383,18 @@ main {
   box-shadow: 0 8px 14px rgba(20, 12, 8, 0.1);
 }
 
+.nav-links a.nav-conversion:not([aria-current="page"]) {
+  background: rgba(135, 77, 74, 0.14);
+  border-color: rgba(135, 77, 74, 0.22);
+  color: var(--copper-deep);
+}
+
+.nav-links a.nav-conversion:not([aria-current="page"]):hover {
+  background: rgba(135, 77, 74, 0.24);
+  border-color: rgba(135, 77, 74, 0.32);
+  color: var(--ink);
+}
+
 .shopify-buy__cart-toggle,
 .shopify-buy-frame--toggle,
 iframe.shopify-buy-frame.shopify-buy-frame--toggle {
@@ -690,10 +702,36 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   background: rgba(255, 248, 241, 0.14);
 }
 
+.btn-tertiary {
+  color: var(--copper-deep);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 0.24em;
+}
+
+.btn-tertiary:hover {
+  background: rgba(111, 56, 52, 0.07);
+  border-color: rgba(111, 56, 52, 0.1);
+}
+
 .btn-primary:hover,
 .btn-secondary:hover,
-.btn-ghost:hover {
+.btn-ghost:hover,
+.btn-tertiary:hover {
   border-color: currentColor;
+}
+
+.hero--immersive .btn-tertiary {
+  color: rgba(255, 242, 230, 0.9);
+  border-color: transparent;
+  background: transparent;
+  text-shadow: 0 10px 22px rgba(12, 7, 5, 0.36);
+}
+
+.hero--immersive .btn-tertiary:hover {
+  background: rgba(255, 248, 241, 0.1);
 }
 
 .hero--immersive .hero-copy .hero-hours-note {
@@ -1236,6 +1274,21 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   transform: translateY(-2px);
   border-color: rgba(163, 86, 61, 0.24);
   background: rgba(248, 241, 230, 0.62);
+}
+
+.about-link-card--primary {
+  border-color: rgba(111, 56, 52, 0.22);
+  background:
+    linear-gradient(180deg, rgba(135, 77, 74, 0.12), rgba(194, 159, 108, 0.08)),
+    rgba(248, 241, 230, 0.58);
+}
+
+.about-link-card--primary strong {
+  color: var(--copper-deep);
+}
+
+.about-link-card--quiet {
+  background: rgba(247, 239, 226, 0.3);
 }
 
 .category-board,
@@ -2216,6 +2269,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   text-decoration: underline;
 }
 
+.shop-support-actions {
+  margin-top: 0.75rem;
+}
+
 .text-link {
   color: var(--copper-deep);
   font-weight: 800;
@@ -2314,6 +2371,11 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   display: grid;
   align-content: start;
   gap: 0.18rem;
+}
+
+.footer-links .footer-primary-link {
+  color: #fff6ea;
+  font-weight: 900;
 }
 
 .footer-heading {
@@ -2575,15 +2637,22 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     border-color: rgba(26, 19, 14, 0.94);
     color: #f8efe2;
   }
+
+  html.js .nav-links a.nav-conversion:not([aria-current="page"]) {
+    background: rgba(135, 77, 74, 0.14);
+    border-color: rgba(135, 77, 74, 0.22);
+    color: var(--copper-deep);
+  }
 }
 
 @media (max-width: 640px) {
   .site-shell {
-    padding-top: calc(2.48rem + env(safe-area-inset-top));
+    padding-top: calc(3.05rem + env(safe-area-inset-top));
   }
 
   .wrap {
     width: min(calc(100% - 1.1rem), var(--max-width));
+    min-width: 0;
   }
 
   .photo-grid--three {
@@ -2632,9 +2701,11 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .nav-bar {
-    gap: 0.24rem;
-    padding: 0.1rem 0 0.12rem;
-    min-height: 2.05rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.34rem;
+    padding: 0.22rem 0 0.24rem;
+    min-height: 2.75rem;
   }
 
   .hero-copy h1,
@@ -2729,16 +2800,21 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     min-height: 2.24rem;
     padding: 0 0.76rem;
     font-size: 0.75rem;
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-align: center;
+    white-space: normal;
   }
 
   .page-hero-copy .button-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.55rem;
   }
 
   .page-hero-copy .button-row .btn:first-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .hero--immersive .button-row {
@@ -2777,6 +2853,23 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .hero--immersive .btn-ghost:hover {
+    background: none;
+  }
+
+  .hero--immersive .btn-tertiary {
+    min-height: auto;
+    padding: 0.12rem 0;
+    border: 0;
+    background: none;
+    color: rgba(255, 242, 230, 0.78);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+  }
+
+  .hero--immersive .btn-tertiary:hover {
     background: none;
   }
 
@@ -2866,34 +2959,43 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .brand {
-    max-width: calc(100% - 4.4rem);
+    max-width: none;
+    min-width: 0;
   }
 
   .brand-copy strong {
     max-width: 100%;
-    overflow: hidden;
-    font-size: clamp(0.72rem, 3.55vw, 0.8rem);
+    overflow: visible;
+    font-size: clamp(0.78rem, 3.55vw, 0.9rem);
     line-height: 1.04;
     letter-spacing: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .brand-copy span {
+    overflow: visible;
+    font-size: clamp(0.54rem, 2.5vw, 0.62rem);
+    letter-spacing: 0.08em;
+    line-height: 1.06;
+    white-space: normal;
   }
 
   .nav-toggle {
-    width: 1.92rem;
-    height: 1.92rem;
+    width: 2.34rem;
+    height: 2.34rem;
     border-radius: 7px;
   }
 
   .header-cart-button {
-    width: 1.92rem;
-    height: 1.92rem;
+    width: 2.34rem;
+    height: 2.34rem;
     border-radius: 7px;
   }
 
   .header-cart-icon {
-    width: 0.92rem;
-    height: 0.92rem;
+    width: 1.04rem;
+    height: 1.04rem;
   }
 
   .header-cart-badge {
@@ -2905,8 +3007,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .nav-toggle-box {
-    width: 0.92rem;
-    height: 0.74rem;
+    width: 1rem;
+    height: 0.78rem;
   }
 
   html.js .nav-links a {
@@ -3111,6 +3213,43 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
   .compact-links a {
     font-size: 0.78rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .nav-bar,
+  .brand-copy,
+  .section-head,
+  .card,
+  .merch-card,
+  .framed-photo,
+  .cta-band,
+  .contact-detail-card,
+  .gallery-highlight-card,
+  .collection-guide-card,
+  .shop-embed-shell {
+    min-width: 0;
+  }
+
+  .utility-links a,
+  .text-link {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .framed-photo,
+  .framed-photo img,
+  .shop-embed-shell,
+  .shop-embed-shell iframe,
+  .shop-embed-shell img,
+  .shop-embed-shell button,
+  .shop-embed-shell [class*="shopify-buy"] {
+    max-width: 100%;
+  }
+
+  #shopify-cart-root.shopify-buy-frame--cart {
+    max-width: min(100vw, 350px) !important;
   }
 
   .footer {
