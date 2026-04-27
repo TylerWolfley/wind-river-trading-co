@@ -1,0 +1,5 @@
+.codex-screenshots/
+rustup-init.exe
+Thumbs.db
+.DS_Store
+*.log
