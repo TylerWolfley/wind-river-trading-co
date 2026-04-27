@@ -471,7 +471,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   position: relative;
   z-index: 2;
   grid-template-columns: minmax(0, 38rem);
-  width: 100%;
+  width: min(calc(100% - 1.6rem), var(--max-width));
+  margin: 0 auto;
 }
 
 .page-hero-grid {
@@ -597,22 +598,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   --hero-image-position: center 56%;
 }
 
-.page-contact .hero--immersive .hero-copy h1 {
-  max-width: 12ch;
-  min-block-size: 2.16em;
-}
-
-.page-contact .hero--immersive .lede {
-  max-width: 31rem;
-  min-block-size: auto;
-}
-
 .collections-immersive-hero {
   --hero-image-position: 55% 14%;
-}
-
-.collections-immersive-hero .hero-grid {
-  width: min(calc(100% - 1.6rem), var(--max-width));
 }
 
 .about-immersive-hero {
@@ -2795,7 +2782,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     --hero-image-position: 52% 10%;
   }
 
-  .collections-immersive-hero .hero-grid {
+  .hero--immersive .hero-grid {
     width: min(calc(100% - 1.1rem), var(--max-width));
   }
 
@@ -3262,28 +3249,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     background:
       linear-gradient(180deg, rgba(18, 12, 8, 0.06) 0%, rgba(18, 12, 8, 0.24) 28%, rgba(18, 12, 8, 0.9) 100%),
       linear-gradient(90deg, rgba(18, 12, 8, 0.78) 0%, rgba(18, 12, 8, 0.18) 66%);
-  }
-
-  .page-home .hero--immersive .hero-copy {
-    max-width: min(100%, 19.5rem);
-  }
-
-  .page-home .hero--immersive .hero-grid {
-    width: min(calc(100% - 1rem), var(--max-width));
-  }
-
-  .page-home .hero--immersive .hero-copy h1 {
-    min-block-size: auto;
-    margin-bottom: 0.36rem;
-    font-size: clamp(1.82rem, 8.4vw, 2.28rem);
-    line-height: 1;
-  }
-
-  .page-home .hero--immersive .lede {
-    min-block-size: auto;
-    max-width: 18.8rem;
-    font-size: 0.84rem;
-    line-height: 1.36;
   }
 
   .page-home .hero--immersive .btn-primary {
