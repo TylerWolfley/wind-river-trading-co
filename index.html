@@ -50,9 +50,71 @@
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&family=Source+Sans+3:wght@400;700;800&display=swap"
         rel="stylesheet"
       />
-    <link rel="stylesheet" href="./styles.css?v=20260427-hero-cohesion" />
+    <link rel="stylesheet" href="./styles.css?v=20260427-homefix" />
     <script defer src="./site.js?v=20260422"></script>
-    <script defer src="./shopify-cart-global.js?v=20260422"></script>
+    <script>
+      (() => {
+        const cartScriptSrc = "./shopify-cart-global.js?v=20260422";
+        let cartScriptPromise;
+        let cartScriptReady = false;
+        let replayingCartClick = false;
+
+        const loadCartScript = () => {
+          if (cartScriptPromise) {
+            return cartScriptPromise;
+          }
+
+          cartScriptPromise = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.async = true;
+            script.src = cartScriptSrc;
+            script.onload = () => {
+              cartScriptReady = true;
+              resolve();
+            };
+            script.onerror = () => {
+              cartScriptPromise = null;
+              reject(new Error("Failed to load Shopify cart."));
+            };
+            document.head.appendChild(script);
+          });
+
+          return cartScriptPromise;
+        };
+
+        document.addEventListener(
+          "click",
+          (event) => {
+            const cartButton = event.target.closest("[data-cart-trigger]");
+
+            if (!cartButton || cartScriptReady || replayingCartClick) {
+              return;
+            }
+
+            event.preventDefault();
+            loadCartScript()
+              .then(() => {
+                replayingCartClick = true;
+                cartButton.click();
+                replayingCartClick = false;
+              })
+              .catch((error) => {
+                console.error(error);
+                replayingCartClick = false;
+              });
+          },
+          true
+        );
+
+        window.addEventListener(
+          "load",
+          () => {
+            window.setTimeout(loadCartScript, 4500);
+          },
+          { once: true }
+        );
+      })();
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -110,7 +172,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="page-home">
     <div class="site-shell">
       <header class="site-header">
         <div class="wrap">
@@ -252,7 +314,7 @@
                 <div class="home-overview-support">
                   <figure class="framed-photo home-overview-photo home-overview-photo--article">
                     <img
-                      src="images2/cheif-washakie-article.JPG"
+                      src="images/chief-washakie-article.JPG"
                       alt="Chief Washakie article on display inside Wind River Trading Company"
                       width="1467"
                       height="2200"
@@ -262,7 +324,7 @@
                   </figure>
                   <figure class="framed-photo home-overview-photo home-overview-photo--coyote">
                     <img
-                      src="images2/antique-wiley-cayote.JPG"
+                      src="images/antique-wile-e-coyote.JPG"
                       alt="Antique Wile E. Coyote display inside Wind River Trading Company"
                       width="2148"
                       height="4288"
@@ -319,43 +381,6 @@
                   </article>
                 </div>
               </div>
-              <p>
-                The shelves move from blankets and apparel to beadwork, jewelry, fabric, gifts,
-                and supplies.
-              </p>
-            </div>
-            <div class="merch-grid home-overview-grid">
-              <article class="card home-overview-card">
-                <p class="card-label">Pendleton &amp; apparel</p>
-                <h3>Blankets, clothing, and Western wear.</h3>
-                <p>
-                  Pendleton blankets, clothing, towels, Native &amp; Western apparel, hats, and
-                  accessories.
-                </p>
-              </article>
-              <article class="card home-overview-card">
-                <p class="card-label">Bags &amp; personal goods</p>
-                <h3>Bags, purses, and wallets.</h3>
-                <p>
-                  Bags, purses, wallets, and other everyday carry items.
-                </p>
-              </article>
-              <article class="card home-overview-card">
-                <p class="card-label">Jewelry &amp; beadwork</p>
-                <h3>Handcrafted work and finished goods.</h3>
-                <p>
-                  Handcrafted jewelry and beadwork stay in the cases. Fabric, ribbon, beads, and
-                  supplies stay close at hand.
-                </p>
-              </article>
-              <article class="card home-overview-card">
-                <p class="card-label">Art, artifacts &amp; gifts</p>
-                <h3>Artwork, antiques, and gift items.</h3>
-                <p>
-                  Native American artwork, artifacts, antiques, gifts, and the Gallery of the Wind
-                  &amp; Museum are part of the building.
-                </p>
-              </article>
             </div>
           </div>
         </section>
