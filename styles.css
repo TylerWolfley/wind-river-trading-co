@@ -2597,7 +2597,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   body.has-mobile-conversion-bar .site-shell {
-    padding-bottom: calc(4.25rem + var(--mobile-conversion-bottom, 0px) + env(safe-area-inset-bottom));
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
   }
 
   .site-header {
@@ -2673,7 +2673,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   .mobile-conversion-bar {
     position: fixed;
     right: 0;
-    bottom: var(--mobile-conversion-bottom, 0px);
+    bottom: 0;
     left: 0;
     z-index: 38;
     display: flex;
@@ -2684,16 +2684,17 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     box-shadow: 0 -8px 18px rgba(24, 16, 10, 0.1);
     opacity: 0;
     pointer-events: none;
-    transform: translateY(calc(100% + 0.4rem));
+    visibility: hidden;
     transition:
       opacity 0.2s ease,
-      transform 0.2s ease;
+      visibility 0s linear 0.2s;
   }
 
   .mobile-conversion-bar.is-visible {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.2s ease;
   }
 
   .mobile-conversion-bar__inner {
