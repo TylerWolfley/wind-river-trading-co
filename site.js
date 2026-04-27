@@ -67,10 +67,22 @@ if (mobileConversionBar) {
   const showAfterScroll = 180;
   let ticking = false;
 
+  const setMobileConversionViewport = () => {
+    const viewport = window.visualViewport;
+    let bottomOffset = 0;
+
+    if (viewport && mobileConversionQuery.matches) {
+      bottomOffset = Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop);
+    }
+
+    document.documentElement.style.setProperty("--mobile-conversion-bottom", `${Math.round(bottomOffset)}px`);
+  };
+
   const setMobileConversionState = () => {
     const navIsOpen = header?.classList.contains("is-nav-open") || false;
     const shouldShow = mobileConversionQuery.matches && window.scrollY > showAfterScroll && !navIsOpen;
 
+    setMobileConversionViewport();
     mobileConversionBar.classList.toggle("is-visible", shouldShow);
     document.body.classList.toggle("has-mobile-conversion-bar", shouldShow);
   };
@@ -90,10 +102,15 @@ if (mobileConversionBar) {
   window.addEventListener("scroll", requestMobileConversionUpdate, { passive: true });
   window.addEventListener("resize", requestMobileConversionUpdate);
 
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", requestMobileConversionUpdate);
+    window.visualViewport.addEventListener("scroll", requestMobileConversionUpdate, { passive: true });
+  }
+
   if (mobileConversionQuery.addEventListener) {
-    mobileConversionQuery.addEventListener("change", setMobileConversionState);
+    mobileConversionQuery.addEventListener("change", requestMobileConversionUpdate);
   } else {
-    mobileConversionQuery.addListener(setMobileConversionState);
+    mobileConversionQuery.addListener(requestMobileConversionUpdate);
   }
 
   navToggle?.addEventListener("click", requestMobileConversionUpdate);

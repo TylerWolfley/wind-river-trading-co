@@ -53,8 +53,8 @@
         href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700;800&family=Source+Sans+3:wght@400;700;800&display=swap"
         rel="stylesheet"
       />
-    <link rel="stylesheet" href="./styles.css?v=20260427-mobile-shop-bar" />
-    <script defer src="./site.js?v=20260427-mobile-shop-bar"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260427-mobile-bar-viewport" />
+    <script defer src="./site.js?v=20260427-mobile-bar-viewport"></script>
     <script defer src="./shopify-cart-global.js?v=20260422"></script>
     <script type="application/ld+json">
       {
@@ -197,20 +197,19 @@
 
         <section class="section">
           <div class="wrap">
-            <figure class="framed-photo gallery-mobile-lead-photo captioned-photo">
+            <figure class="framed-photo gallery-lead-photo">
               <img
-                src="images/historic-guns-display.jpg"
-                alt="Historic firearm display inside the Gallery of the Wind"
-                width="1323"
-                height="828"
+                src="images/gallery-of-the-wind-2.JPG"
+                alt="Historic car and surrounding display pieces inside the Gallery of the Wind"
+                width="5568"
+                height="3712"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Historic firearms and older pieces are part of the gallery room.</figcaption>
             </figure>
           </div>
-          <div class="wrap split-feature gallery-intro">
-            <div>
+          <div class="wrap gallery-intro">
+            <div class="gallery-intro-copy">
               <p class="eyebrow">Inside Wind River Trading Company</p>
               <h2>A room of artwork, photographs, beadwork, and older pieces.</h2>
               <p>
@@ -237,23 +236,6 @@
                 </div>
               </div>
             </div>
-
-            <div class="photo-stack">
-              <figure class="framed-photo wide-photo captioned-photo">
-                <img
-                  src="images/gallery-of-the-wind-2.JPG"
-                  alt="Historic car and surrounding display pieces inside the Gallery of the Wind"
-                  width="5568"
-                  height="3712"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>
-                  Large pieces, case displays, photographs, and handmade work share the gallery
-                  room.
-                </figcaption>
-              </figure>
-            </div>
           </div>
         </section>
 
@@ -262,11 +244,11 @@
             <div class="section-head">
               <div>
                 <p class="eyebrow">Display highlights</p>
-                <h2>Chief Washakie, beadwork, old photographs, and the odd pieces you remember.</h2>
+                <h2>Chief Washakie, beadwork, old photographs, and handmade work.</h2>
               </div>
               <p>
-                The room mixes serious historical material with the kind of objects that collect
-                around a long-running trading post.
+                The room mixes local history with the kind of handmade work and older objects that
+                collect around a long-running trading post.
               </p>
             </div>
 
@@ -281,9 +263,6 @@
                     loading="lazy"
                     decoding="async"
                   />
-                  <figcaption>
-                    A display panel retells the Crowheart Butte story connected to Chief Washakie.
-                  </figcaption>
                 </figure>
                 <div class="gallery-highlight-copy">
                   <p class="eyebrow">Chief Washakie</p>
@@ -302,31 +281,26 @@
               </article>
 
               <article class="gallery-highlight-card">
-                <figure class="framed-photo gallery-coyote-photo captioned-photo">
+                <figure class="framed-photo gallery-moccasins-photo">
                   <img
-                    src="images/antique-wile-e-coyote.JPG"
-                    alt="Antique Wile E. Coyote figure dressed with beadwork and moccasins in the Gallery of the Wind"
+                    src="images/gallery-of-the-wind-moccasins.JPG"
+                    alt="Moccasins displayed inside the Gallery of the Wind"
                     width="1467"
                     height="2200"
                     loading="lazy"
                     decoding="async"
                   />
-                  <figcaption>
-                    A Wile E. Coyote figure sits among older trading-post objects and handmade
-                    details.
-                  </figcaption>
                 </figure>
                 <div class="gallery-highlight-copy">
-                  <p class="eyebrow">Trading-post character</p>
-                  <h3>The odd details matter too.</h3>
+                  <p class="eyebrow">Beadwork</p>
+                  <h3>Handmade pieces deserve a closer look.</h3>
                   <p>
-                    Not every memorable object is solemn. The Wile E. Coyote figure, dressed in
-                    beadwork-style clothing and moccasins, sits near old gear and a tobacco tin. It
-                    brings a little humor into a room that also carries serious historical material.
+                    Moccasins, beadwork, and small handmade pieces are easy to pass by too quickly.
+                    They are part of the reason the room needs a slower walk-through.
                   </p>
                   <p>
-                    The serious pieces and the odd objects sit close together. That is part of what
-                    makes the room feel like it belongs inside a trading post.
+                    The details matter here: bead colors, stitching, worn materials, and the way
+                    these pieces sit among older photographs and cases.
                   </p>
                 </div>
               </article>
@@ -374,18 +348,7 @@
               </div>
             </div>
 
-            <div class="photo-grid photo-grid--three gallery-photo-grid" aria-label="Gallery details">
-              <figure class="framed-photo detail-photo captioned-photo">
-                <img
-                  src="images/gallery-of-the-wind-moccasins.JPG"
-                  alt="Moccasins displayed inside the Gallery of the Wind"
-                  width="1467"
-                  height="2200"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Moccasins and beadwork are worth a close look.</figcaption>
-              </figure>
+            <div class="photo-grid gallery-photo-grid gallery-photo-grid--reduced" aria-label="Gallery details">
               <figure class="framed-photo detail-photo captioned-photo">
                 <img
                   src="images/fine-art-1.JPG"
@@ -395,7 +358,6 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption>Painted and carved pieces sit beyond the display cases.</figcaption>
               </figure>
               <figure class="framed-photo detail-photo captioned-photo">
                 <img
@@ -406,40 +368,6 @@
                   loading="lazy"
                   decoding="async"
                 />
-                <figcaption>Historic objects sit beside art and handmade work.</figcaption>
-              </figure>
-              <figure class="framed-photo detail-photo captioned-photo">
-                <img
-                  src="images/gallery-of-the-wind-1.JPG"
-                  alt="Historic wall display inside the Gallery of the Wind"
-                  width="5568"
-                  height="3712"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Wall displays bring older images into the room.</figcaption>
-              </figure>
-              <figure class="framed-photo detail-photo captioned-photo">
-                <img
-                  src="images/handmade-art-2.JPG"
-                  alt="Display case with jewelry and art inside the Gallery of the Wind"
-                  width="5568"
-                  height="3712"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Jewelry and handmade art fill the cases.</figcaption>
-              </figure>
-              <figure class="framed-photo detail-photo captioned-photo">
-                <img
-                  src="images/knife-display.JPG"
-                  alt="Historic tools and knife display inside the Gallery of the Wind"
-                  width="5568"
-                  height="3712"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Tools and knives round out the historical displays.</figcaption>
               </figure>
             </div>
           </div>
@@ -456,10 +384,6 @@
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                The gallery is in the same building as the store, so visitors can move between the
-                display room and retail rooms in one stop.
-              </figcaption>
             </figure>
 
             <div>

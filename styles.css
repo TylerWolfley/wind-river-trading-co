@@ -542,6 +542,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 .page-hero-copy h1,
 .section-head h1,
 .section-head h2,
+.gallery-intro h2,
 .split-feature h2,
 .cta-band h2,
 .card h3,
@@ -1055,29 +1056,6 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 .about-comparison-photo img {
   aspect-ratio: 16 / 10;
   object-position: center;
-}
-
-.about-comparison-photo figcaption {
-  display: grid;
-  gap: 0.08rem;
-  padding: 0.52rem 0.2rem 0.08rem;
-}
-
-.about-comparison-photo figcaption strong,
-.about-comparison-photo figcaption span {
-  display: block;
-}
-
-.about-comparison-photo figcaption strong {
-  color: var(--ink);
-  font-size: 0.95rem;
-  line-height: 1.18;
-}
-
-.about-comparison-photo figcaption span {
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.3;
 }
 
 .about-history-copy--comparison {
@@ -1766,15 +1744,21 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .gallery-intro {
-  align-items: center;
+  display: grid;
+  align-items: start;
 }
 
-.gallery-intro .photo-stack {
-  align-self: center;
+.gallery-intro-copy {
+  max-width: 56rem;
 }
 
-.gallery-mobile-lead-photo {
-  display: none;
+.gallery-lead-photo {
+  margin: 0 0 clamp(0.78rem, 1.8vw, 1.12rem);
+}
+
+.gallery-lead-photo img {
+  aspect-ratio: 16 / 8;
+  object-position: center;
 }
 
 .gallery-highlight-card {
@@ -1804,17 +1788,17 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   color: var(--muted);
 }
 
-.gallery-newspaper-photo img,
-.gallery-coyote-photo img {
-  aspect-ratio: 4 / 5;
-  object-position: center top;
+.gallery-newspaper-photo img {
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(232, 215, 188, 0.44);
 }
 
-.captioned-photo figcaption {
-  margin: 0.42rem 0.18rem 0.08rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.36;
+.gallery-moccasins-photo img {
+  aspect-ratio: 4 / 5;
+  object-position: center 52%;
 }
 
 .framed-photo {
@@ -1953,6 +1937,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .gallery-photo-grid img {
   aspect-ratio: 5 / 4;
+}
+
+.gallery-photo-grid--reduced {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .home-category-layout {
@@ -2109,6 +2097,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   align-items: start;
 }
 
+.gallery-intro p,
 .split-feature p {
   color: var(--muted);
 }
@@ -2587,7 +2576,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   body.has-mobile-conversion-bar .site-shell {
-    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+    padding-bottom: calc(4.25rem + var(--mobile-conversion-bottom, 0px) + env(safe-area-inset-bottom));
   }
 
   .site-header {
@@ -2663,7 +2652,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   .mobile-conversion-bar {
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: var(--mobile-conversion-bottom, 0px);
     left: 0;
     z-index: 38;
     display: flex;
@@ -3103,6 +3092,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   }
 
   .section-head h2,
+  .gallery-intro h2,
   .split-feature h2,
   .contact-overview-copy h2,
   .contact-focus h2 {
@@ -3112,6 +3102,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
   .lede,
   .section-head p,
+  .gallery-intro p,
   .split-feature p,
   .card p,
   .merch-card-copy p {
@@ -3179,18 +3170,16 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding: 0.64rem;
   }
 
-  .page-gallery .gallery-mobile-lead-photo {
-    display: block;
+  .page-gallery .gallery-lead-photo {
     margin: 0 0 0.72rem;
   }
 
-  .page-gallery .gallery-mobile-lead-photo img {
-    aspect-ratio: 4 / 3;
-    object-position: left center;
+  .page-gallery .gallery-lead-photo img {
+    aspect-ratio: 16 / 10;
   }
 
-  .captioned-photo figcaption {
-    font-size: 0.76rem;
+  .gallery-photo-grid--reduced {
+    grid-template-columns: 1fr;
   }
 
   .category-board {
