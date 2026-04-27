@@ -2439,7 +2439,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   color: #ffffff;
 }
 
-.mobile-shop-cta {
+.mobile-bottom-cta {
   display: none;
 }
 
@@ -2692,14 +2692,16 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     color: var(--copper-deep);
   }
 
-  body.has-mobile-shop-cta {
-    padding-bottom: calc(4.1rem + var(--mobile-shop-cta-bottom, 0px) + env(safe-area-inset-bottom));
+  body.has-mobile-bottom-cta {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
   }
 
-  .mobile-shop-cta {
+  .mobile-bottom-cta {
     position: fixed;
-    inset: auto 0 var(--mobile-shop-cta-bottom, 0px);
-    z-index: 70;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(6.4rem, 0.42fr);
     gap: 0.46rem;
@@ -2712,16 +2714,9 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     box-shadow:
       0 -1px 0 rgba(255, 246, 233, 0.08),
       0 -12px 22px rgba(20, 12, 8, 0.2);
-    opacity: 0;
-    pointer-events: none;
-    transform: translate3d(0, calc(100% + var(--mobile-shop-cta-bottom, 0px)), 0);
-    transition:
-      transform 190ms cubic-bezier(0.2, 0.8, 0.2, 1),
-      opacity 140ms ease;
-    will-change: transform, opacity;
   }
 
-  .mobile-shop-cta::before {
+  .mobile-bottom-cta::before {
     content: "";
     position: absolute;
     inset: 0 0 auto;
@@ -2730,13 +2725,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     opacity: 0.7;
   }
 
-  .mobile-shop-cta.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .mobile-shop-cta a {
+  .mobile-bottom-cta a {
     min-width: 0;
     min-height: 2.62rem;
     display: inline-flex;
@@ -2750,14 +2739,14 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     text-decoration: none;
   }
 
-  .mobile-shop-cta__primary {
+  .mobile-bottom-cta__primary {
     border: 1px solid rgba(255, 246, 234, 0.22);
     background: #874d4a;
     color: #fff6ea;
     box-shadow: inset 0 1px 0 rgba(255, 246, 234, 0.16);
   }
 
-  .mobile-shop-cta__secondary {
+  .mobile-bottom-cta__secondary {
     border: 1px solid rgba(244, 236, 223, 0.22);
     background: rgba(255, 246, 234, 0.08);
     color: rgba(255, 246, 234, 0.92);
