@@ -1631,10 +1631,27 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   gap: clamp(0.82rem, 1.8vw, 1.18rem);
 }
 
+.collection-guide--front {
+  gap: clamp(0.72rem, 1.7vw, 1.05rem);
+}
+
+.collection-lead-photo {
+  margin: 0;
+}
+
+.collection-lead-photo img {
+  aspect-ratio: 16 / 9;
+  object-position: center;
+}
+
 .collection-guide-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-gap);
+}
+
+.collection-guide-grid--collections {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .collection-guide-card {
@@ -1670,6 +1687,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .collection-feature--makers {
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.collection-feature--goods {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
 }
 
 .collection-feature-copy {
