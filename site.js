@@ -59,3 +59,43 @@ if (header && navToggle) {
     syncMenuState();
   }
 }
+
+const mobileConversionBar = document.querySelector("[data-mobile-conversion-bar]");
+
+if (mobileConversionBar) {
+  const mobileConversionQuery = window.matchMedia("(max-width: 760px)");
+  const showAfterScroll = 180;
+  let ticking = false;
+
+  const setMobileConversionState = () => {
+    const navIsOpen = header?.classList.contains("is-nav-open") || false;
+    const shouldShow = mobileConversionQuery.matches && window.scrollY > showAfterScroll && !navIsOpen;
+
+    mobileConversionBar.classList.toggle("is-visible", shouldShow);
+    document.body.classList.toggle("has-mobile-conversion-bar", shouldShow);
+  };
+
+  const requestMobileConversionUpdate = () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      ticking = false;
+      setMobileConversionState();
+    });
+  };
+
+  window.addEventListener("scroll", requestMobileConversionUpdate, { passive: true });
+  window.addEventListener("resize", requestMobileConversionUpdate);
+
+  if (mobileConversionQuery.addEventListener) {
+    mobileConversionQuery.addEventListener("change", setMobileConversionState);
+  } else {
+    mobileConversionQuery.addListener(setMobileConversionState);
+  }
+
+  navToggle?.addEventListener("click", requestMobileConversionUpdate);
+  setMobileConversionState();
+}

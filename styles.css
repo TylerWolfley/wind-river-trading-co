@@ -2311,6 +2311,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   margin-top: 0;
 }
 
+.mobile-conversion-bar {
+  display: none;
+}
+
 .footer {
   position: relative;
   margin-top: clamp(0.7rem, 1.2vw, 1rem);
@@ -2582,6 +2586,10 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding-top: calc(2.6rem + env(safe-area-inset-top));
   }
 
+  body.has-mobile-conversion-bar .site-shell {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+  }
+
   .site-header {
     position: fixed;
     inset: 0 0 auto 0;
@@ -2650,6 +2658,62 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     background: rgba(135, 77, 74, 0.14);
     border-color: rgba(135, 77, 74, 0.22);
     color: var(--copper-deep);
+  }
+
+  .mobile-conversion-bar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 38;
+    display: flex;
+    justify-content: center;
+    padding: 0.42rem 0.62rem calc(0.42rem + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(67, 47, 32, 0.18);
+    background: rgba(235, 218, 192, 0.98);
+    box-shadow: 0 -8px 18px rgba(24, 16, 10, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(100% + 0.4rem));
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .mobile-conversion-bar.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-conversion-bar__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.48rem;
+    width: min(100%, 28rem);
+  }
+
+  .mobile-conversion-bar .btn {
+    min-height: 2.28rem;
+    padding: 0 0.86rem;
+    font-size: 0.76rem;
+  }
+
+  .mobile-conversion-bar__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.28rem;
+    padding: 0 0.2rem;
+    color: var(--copper-deep);
+    font-size: 0.74rem;
+    font-weight: 900;
+    line-height: 1.05;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+    white-space: nowrap;
   }
 }
 
