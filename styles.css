@@ -2684,17 +2684,23 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     box-shadow: 0 -8px 18px rgba(24, 16, 10, 0.1);
     opacity: 0;
     pointer-events: none;
+    transform: translate3d(0, calc(100% + 0.5rem), 0);
     visibility: hidden;
+    will-change: transform, opacity;
     transition:
-      opacity 0.2s ease,
-      visibility 0s linear 0.2s;
+      transform 0.18s cubic-bezier(0.22, 0.72, 0.24, 1),
+      opacity 0.14s ease-out,
+      visibility 0s linear 0.18s;
   }
 
   .mobile-conversion-bar.is-visible {
     opacity: 1;
     pointer-events: auto;
+    transform: translate3d(0, 0, 0);
     visibility: visible;
-    transition: opacity 0.2s ease;
+    transition:
+      transform 0.18s cubic-bezier(0.22, 0.72, 0.24, 1),
+      opacity 0.14s ease-out;
   }
 
   .mobile-conversion-bar__inner {

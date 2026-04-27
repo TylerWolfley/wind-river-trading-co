@@ -66,11 +66,17 @@ if (mobileConversionBar) {
   const mobileConversionQuery = window.matchMedia("(max-width: 760px)");
   const showAfterScroll = 180;
   let ticking = false;
+  let isMobileConversionVisible = false;
 
   const setMobileConversionState = () => {
     const navIsOpen = header?.classList.contains("is-nav-open") || false;
     const shouldShow = mobileConversionQuery.matches && window.scrollY > showAfterScroll && !navIsOpen;
 
+    if (shouldShow === isMobileConversionVisible) {
+      return;
+    }
+
+    isMobileConversionVisible = shouldShow;
     mobileConversionBar.classList.toggle("is-visible", shouldShow);
     document.body.classList.toggle("has-mobile-conversion-bar", shouldShow);
   };
