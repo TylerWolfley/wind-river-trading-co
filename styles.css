@@ -2596,7 +2596,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding-top: calc(2.6rem + env(safe-area-inset-top));
   }
 
-  body.has-mobile-conversion-bar .site-shell {
+  body.has-mobile-conversion-bar-page .site-shell {
     padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
   }
 
@@ -2679,36 +2679,52 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     display: flex;
     justify-content: center;
     padding: 0.42rem 0.62rem calc(0.42rem + env(safe-area-inset-bottom));
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s linear 0.2s;
+  }
+
+  .mobile-conversion-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     border-top: 1px solid rgba(67, 47, 32, 0.18);
     background: rgba(235, 218, 192, 0.98);
     box-shadow: 0 -8px 18px rgba(24, 16, 10, 0.1);
     opacity: 0;
-    pointer-events: none;
-    transform: translate3d(0, calc(100% + 0.5rem), 0);
-    visibility: hidden;
-    will-change: transform, opacity;
-    transition:
-      transform 0.18s cubic-bezier(0.22, 0.72, 0.24, 1),
-      opacity 0.14s ease-out,
-      visibility 0s linear 0.18s;
+    transition: opacity 0.14s ease-out;
   }
 
   .mobile-conversion-bar.is-visible {
-    opacity: 1;
     pointer-events: auto;
-    transform: translate3d(0, 0, 0);
     visibility: visible;
-    transition:
-      transform 0.18s cubic-bezier(0.22, 0.72, 0.24, 1),
-      opacity 0.14s ease-out;
+    transition: none;
+  }
+
+  .mobile-conversion-bar.is-visible::before {
+    opacity: 1;
   }
 
   .mobile-conversion-bar__inner {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 0.48rem;
     width: min(100%, 28rem);
+    opacity: 0;
+    transform: translate3d(0, calc(100% + 0.45rem), 0);
+    will-change: transform, opacity;
+    transition:
+      transform 0.2s cubic-bezier(0.22, 0.72, 0.24, 1),
+      opacity 0.14s ease-out;
+  }
+
+  .mobile-conversion-bar.is-visible .mobile-conversion-bar__inner {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 
   .mobile-conversion-bar .btn {

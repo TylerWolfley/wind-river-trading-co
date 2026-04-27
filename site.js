@@ -68,6 +68,8 @@ if (mobileConversionBar) {
   let ticking = false;
   let isMobileConversionVisible = false;
 
+  document.body.classList.add("has-mobile-conversion-bar-page");
+
   const setMobileConversionState = () => {
     const navIsOpen = header?.classList.contains("is-nav-open") || false;
     const shouldShow = mobileConversionQuery.matches && window.scrollY > showAfterScroll && !navIsOpen;
@@ -78,7 +80,6 @@ if (mobileConversionBar) {
 
     isMobileConversionVisible = shouldShow;
     mobileConversionBar.classList.toggle("is-visible", shouldShow);
-    document.body.classList.toggle("has-mobile-conversion-bar", shouldShow);
   };
 
   const requestMobileConversionUpdate = () => {
