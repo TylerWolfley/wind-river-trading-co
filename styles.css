@@ -1636,6 +1636,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .collection-lead-photo {
+  display: none;
   margin: 0;
 }
 
@@ -1766,20 +1767,20 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .gallery-intro {
   display: grid;
-  align-items: start;
+  align-items: center;
 }
 
 .gallery-intro-copy {
   max-width: 56rem;
 }
 
-.gallery-lead-photo {
-  margin: 0 0 clamp(0.78rem, 1.8vw, 1.12rem);
+.gallery-mobile-lead-photo {
+  display: none;
+  margin: 0;
 }
 
-.gallery-lead-photo img {
-  aspect-ratio: 16 / 8;
-  object-position: center;
+.gallery-intro-visual {
+  align-self: center;
 }
 
 .gallery-highlight-card {
@@ -1807,6 +1808,22 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 
 .gallery-highlight-copy p {
   color: var(--muted);
+}
+
+@media (min-width: 901px) {
+  .page-gallery .gallery-intro,
+  .collection-feature--pendleton {
+    align-items: start;
+  }
+
+  .page-gallery .gallery-intro-visual {
+    align-self: start;
+  }
+
+  .collection-feature--pendleton .collection-feature-copy {
+    align-content: start;
+    padding-top: clamp(0.12rem, 0.45vw, 0.32rem);
+  }
 }
 
 .gallery-newspaper-photo img {
@@ -2923,6 +2940,18 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     grid-template-columns: 1fr;
   }
 
+  .collection-lead-photo {
+    display: block;
+  }
+
+  .collection-feature-photo--desktop-origin {
+    display: none;
+  }
+
+  .page-gallery .gallery-intro-visual {
+    display: none;
+  }
+
   .collection-feature-visuals {
     grid-template-columns: 1fr;
   }
@@ -3128,11 +3157,12 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding: 0.64rem;
   }
 
-  .page-gallery .gallery-lead-photo {
+  .page-gallery .gallery-mobile-lead-photo {
+    display: block;
     margin: 0 0 0.72rem;
   }
 
-  .page-gallery .gallery-lead-photo img {
+  .page-gallery .gallery-mobile-lead-photo img {
     aspect-ratio: 16 / 10;
   }
 
