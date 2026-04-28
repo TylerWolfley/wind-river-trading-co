@@ -544,6 +544,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 .section-head h1,
 .section-head h2,
 .gallery-intro h2,
+.gallery-plan-copy h2,
 .split-feature h2,
 .cta-band h2,
 .card h3,
@@ -1990,6 +1991,17 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.gallery-guns-photo img {
+  aspect-ratio: 1323 / 828;
+  object-fit: contain;
+  object-position: left center;
+  background: rgba(232, 215, 188, 0.44);
+}
+
+.gallery-plan-copy {
+  max-width: 48rem;
+}
+
 .home-category-layout {
   grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
   align-items: start;
@@ -2145,6 +2157,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .gallery-intro p,
+.gallery-plan-copy p,
 .split-feature p {
   color: var(--muted);
 }
