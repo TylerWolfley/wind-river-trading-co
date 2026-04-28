@@ -2105,7 +2105,7 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .shop-embed-shell {
-  min-height: clamp(24rem, 65vh, 42rem);
+  min-height: clamp(10rem, 26vh, 18rem);
   padding: clamp(0.82rem, 1.55vw, 1rem);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -2114,6 +2114,18 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     inset 0 1px 0 rgba(255, 255, 255, 0.52),
     var(--shadow-soft);
   overflow-x: auto;
+}
+
+.shop-notes {
+  margin-top: clamp(0.95rem, 2vw, 1.25rem);
+}
+
+.section-head--compact {
+  margin-bottom: 0.68rem;
+}
+
+.shop-note-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card {
