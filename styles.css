@@ -1576,8 +1576,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
 }
 
 .contact-arrival-photo img {
-  aspect-ratio: 16 / 10;
-  object-position: center 48%;
+  aspect-ratio: 4 / 3;
+  object-position: 43% 52%;
 }
 
 .contact-section-head {
