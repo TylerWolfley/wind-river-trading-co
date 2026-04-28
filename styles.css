@@ -2692,8 +2692,8 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     color: var(--copper-deep);
   }
 
-  body.has-mobile-bottom-cta {
-    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+  body.has-mobile-bottom-cta .footer {
+    padding-bottom: calc(4.8rem + env(safe-area-inset-bottom));
   }
 
   .mobile-bottom-cta {
@@ -2709,11 +2709,24 @@ iframe.shopify-buy-frame.shopify-buy-frame--toggle {
     padding: 0.5rem 0.62rem calc(0.56rem + env(safe-area-inset-bottom));
     border-top: 1px solid rgba(194, 159, 108, 0.3);
     background:
-      linear-gradient(90deg, rgba(135, 77, 74, 0.28), rgba(85, 122, 118, 0.2)),
-      linear-gradient(180deg, rgba(29, 41, 31, 0.98), rgba(17, 28, 23, 0.995));
+      linear-gradient(90deg, rgba(135, 77, 74, 0.18), rgba(85, 122, 118, 0.16)),
+      linear-gradient(180deg, #1d291f 0%, #111c17 100%);
     box-shadow:
       0 -1px 0 rgba(255, 246, 233, 0.08),
-      0 -12px 22px rgba(20, 12, 8, 0.2);
+      0 -10px 22px rgba(20, 12, 8, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition:
+      opacity 140ms ease,
+      visibility 0s linear 140ms;
+  }
+
+  .mobile-bottom-cta.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition-delay: 0s;
   }
 
   .mobile-bottom-cta::before {
